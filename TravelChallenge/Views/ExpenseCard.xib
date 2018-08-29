@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExpenseCardView" customModule="TravelChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2W-zb-ACa">
+                    <rect key="frame" x="16" y="8" width="343" height="104"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-eL-6ti">
+                            <rect key="frame" x="16" y="16" width="72" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="72" id="dA4-7Q-Rhw"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vru-Wm-7fI">
+                            <rect key="frame" x="96" y="16" width="231" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDU-Pn-WL4">
+                            <rect key="frame" x="96" y="53" width="231" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="TRB-eL-6ti" firstAttribute="top" secondItem="vru-Wm-7fI" secondAttribute="top" id="5Ia-Ca-xYd"/>
+                        <constraint firstItem="vru-Wm-7fI" firstAttribute="leading" secondItem="TRB-eL-6ti" secondAttribute="trailing" constant="8" symbolic="YES" id="9Nw-AH-JLK"/>
+                        <constraint firstItem="vru-Wm-7fI" firstAttribute="trailing" secondItem="pDU-Pn-WL4" secondAttribute="trailing" id="Cdm-wW-hly"/>
+                        <constraint firstItem="TRB-eL-6ti" firstAttribute="centerY" secondItem="S2W-zb-ACa" secondAttribute="centerY" id="I2y-4g-PUD"/>
+                        <constraint firstItem="pDU-Pn-WL4" firstAttribute="top" secondItem="vru-Wm-7fI" secondAttribute="bottom" constant="8" symbolic="YES" id="Ulk-tb-qDF"/>
+                        <constraint firstItem="TRB-eL-6ti" firstAttribute="leading" secondItem="S2W-zb-ACa" secondAttribute="leading" constant="16" id="cBa-Qp-y5b"/>
+                        <constraint firstItem="vru-Wm-7fI" firstAttribute="leading" secondItem="pDU-Pn-WL4" secondAttribute="leading" id="r5w-g3-Hg8"/>
+                        <constraint firstItem="TRB-eL-6ti" firstAttribute="top" secondItem="S2W-zb-ACa" secondAttribute="top" constant="16" id="sCI-x4-eFW"/>
+                        <constraint firstAttribute="trailing" secondItem="vru-Wm-7fI" secondAttribute="trailing" constant="16" id="woZ-uX-xmN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="S2W-zb-ACa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Da2-4A-tRd"/>
+                <constraint firstItem="S2W-zb-ACa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="SHN-V4-w4l"/>
+                <constraint firstItem="S2W-zb-ACa" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="T7D-lN-RWA"/>
+                <constraint firstItem="S2W-zb-ACa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="g3U-iL-0cq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="categoryLabel" destination="vru-Wm-7fI" id="9Up-uD-7Ol"/>
+                <outlet property="goalTextField" destination="pDU-Pn-WL4" id="quF-Vo-IAm"/>
+                <outlet property="iconImageView" destination="TRB-eL-6ti" id="fQw-2j-WaU"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+</document>
