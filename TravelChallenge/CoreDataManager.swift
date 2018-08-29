@@ -49,6 +49,25 @@ class CoreDataManager {
             }
         }
     }
-
     
+    func fecth<T: NSManagedObject>(where predicates: NSCompoundPredicate?, sorting sorters: [NSSortDescriptor]?) -> [T]? {
+        let context = persistentContainer.viewContext
+        let request = T.fetchRequest()
+        if let conditions = predicates {
+            request.predicate = conditions
+        }
+        if let sortDescriptors = sorters {
+            request.sortDescriptors = sortDescriptors
+        }
+        
+        do {
+            let records = try context.fetch(request) as? [T]
+            return records
+        } catch {
+            let nserror = error as NSError
+            ErrorHandler.printErrorMessage(error: nserror)
+            return nil
+        }
+    }
+
 }

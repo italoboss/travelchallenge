@@ -18,6 +18,7 @@
 		2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF542135C19D009F54D6 /* CoreDataManager.swift */; };
 		2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */; };
 		2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF5C2135C349009F54D6 /* ColorPalette.swift */; };
+		2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF632136E480009F54D6 /* TravelRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2CABAF542135C19D009F54D6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		2CABAF5C2135C349009F54D6 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		2CABAF632136E480009F54D6 /* TravelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		2CABAF562135C1AC009F54D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2CABAF622136E464009F54D6 /* Repository */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +170,14 @@
 				2CABAF5C2135C349009F54D6 /* ColorPalette.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		2CABAF622136E464009F54D6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2CABAF632136E480009F54D6 /* TravelRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 				2CABAF262135C011009F54D6 /* ViewController.swift in Sources */,
 				2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */,
 				2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */,
+				2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */,
 				2CABAF242135C011009F54D6 /* AppDelegate.swift in Sources */,
 				2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */,
 			);
