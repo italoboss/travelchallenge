@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2CABAF242135C011009F54D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF232135C011009F54D6 /* AppDelegate.swift */; };
-		2CABAF262135C011009F54D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF252135C011009F54D6 /* ViewController.swift */; };
 		2CABAF292135C011009F54D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CABAF272135C011009F54D6 /* Main.storyboard */; };
 		2CABAF2C2135C011009F54D6 /* TravelChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF2A2135C011009F54D6 /* TravelChallenge.xcdatamodeld */; };
 		2CABAF2E2135C012009F54D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CABAF2D2135C012009F54D6 /* Assets.xcassets */; };
@@ -19,6 +18,10 @@
 		2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */; };
 		2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF5C2135C349009F54D6 /* ColorPalette.swift */; };
 		2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF632136E480009F54D6 /* TravelRepository.swift */; };
+		BE8DFACB2136E461006B5212 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFACA2136E461006B5212 /* NewTripViewController.swift */; };
+		BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */; };
+		BE8DFACF2136E5DF006B5212 /* ExpenseCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */; };
+		BE8DFAD12136E85A006B5212 /* ExpenseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,6 @@
 /* Begin PBXFileReference section */
 		2CABAF202135C011009F54D6 /* TravelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CABAF232135C011009F54D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CABAF252135C011009F54D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2CABAF282135C011009F54D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CABAF2B2135C011009F54D6 /* TravelChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelChallenge.xcdatamodel; sourceTree = "<group>"; };
 		2CABAF2D2135C012009F54D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +59,10 @@
 		2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		2CABAF5C2135C349009F54D6 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		2CABAF632136E480009F54D6 /* TravelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRepository.swift; sourceTree = "<group>"; };
+		BE8DFACA2136E461006B5212 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
+		BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewController.swift; sourceTree = "<group>"; };
+		BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseCard.xib; sourceTree = "<group>"; };
+		BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExpenseCardView.swift; path = TravelChallenge/Views/ExpenseCardView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 				2CABAF2A2135C011009F54D6 /* TravelChallenge.xcdatamodeld */,
 				2CABAF542135C19D009F54D6 /* CoreDataManager.swift */,
 				2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */,
+				2CABAF272135C011009F54D6 /* Main.storyboard */,
 			);
 			path = TravelChallenge;
 			sourceTree = "<group>";
@@ -151,7 +158,8 @@
 		2CABAF572135C1B3009F54D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2CABAF272135C011009F54D6 /* Main.storyboard */,
+				BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */,
+				BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,7 +167,8 @@
 		2CABAF582135C1BE009F54D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2CABAF252135C011009F54D6 /* ViewController.swift */,
+				BE8DFACA2136E461006B5212 /* NewTripViewController.swift */,
+				BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 			files = (
 				2CABAF312135C012009F54D6 /* LaunchScreen.storyboard in Resources */,
 				2CABAF2E2135C012009F54D6 /* Assets.xcassets in Resources */,
+				BE8DFACF2136E5DF006B5212 /* ExpenseCard.xib in Resources */,
 				2CABAF292135C011009F54D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,10 +322,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CABAF2C2135C011009F54D6 /* TravelChallenge.xcdatamodeld in Sources */,
-				2CABAF262135C011009F54D6 /* ViewController.swift in Sources */,
 				2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */,
+				BE8DFACB2136E461006B5212 /* NewTripViewController.swift in Sources */,
+				BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */,
 				2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */,
 				2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */,
+				BE8DFAD12136E85A006B5212 /* ExpenseCardView.swift in Sources */,
 				2CABAF242135C011009F54D6 /* AppDelegate.swift in Sources */,
 				2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */,
 			);
