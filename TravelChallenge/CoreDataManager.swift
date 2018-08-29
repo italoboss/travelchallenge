@@ -50,7 +50,7 @@ class CoreDataManager {
         }
     }
     
-    func fecth<T: NSManagedObject>(where predicates: NSCompoundPredicate?, sorting sorters: [NSSortDescriptor]?) -> [T]? {
+    func fecth<T: NSManagedObject>(where predicates: NSCompoundPredicate? = nil, sorting sorters: [NSSortDescriptor]? = nil) -> [T]? {
         let context = persistentContainer.viewContext
         let request = T.fetchRequest()
         if let conditions = predicates {
