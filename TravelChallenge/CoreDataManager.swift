@@ -69,5 +69,12 @@ class CoreDataManager {
             return nil
         }
     }
+    
+    func delete<T: NSManagedObject>(objects: [T]) {
+        for obj in objects {
+            persistentContainer.viewContext.delete(obj)
+        }
+        self.saveContext()
+    }
 
 }
