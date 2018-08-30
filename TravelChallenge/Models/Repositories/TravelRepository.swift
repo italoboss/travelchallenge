@@ -10,22 +10,24 @@ import CoreData
 
 class TravelRepository {
     
-    func fetchMyTravel() -> Travel? {
-        guard let travel: Travel = CoreDataManager.manager.fecth()?.first else {
+    func fetchMyTravel() -> TravelDto? {
+        guard let savedTravel: Travel = CoreDataManager.manager.fecth()?.first, let travel =  try? TravelDto(from: savedTravel)
+        else {
             return nil
         }
+        
         return travel
     }
     
-    func saveTravel(to destination: String, at travelDate: Date, with savedValue: Double) {
-        var travel: Travel = Travel(context: CoreDataManager.manager.persistentContainer.viewContext)
-        if let savedTravel = fetchMyTravel() {
-            travel = savedTravel
+    func save(travel: TravelDto) {
+        var toSave: Travel = Travel(context: CoreDataManager.manager.persistentContainer.viewContext)
+        if let savedTravel: Travel = CoreDataManager.manager.fecth()?.first {
+            toSave = savedTravel
         }
-        travel.destination = destination
-        travel.travelDate = travelDate
-        travel.savedValue = savedValue
-        travel.createdAt = Date()
+        toSave.destination = travel.destination
+        toSave.travelDate = travel.travelDate
+        toSave.savedValue = travel.savedValue
+        toSave.createdAt = Date()
         CoreDataManager.manager.saveContext()
     }
     

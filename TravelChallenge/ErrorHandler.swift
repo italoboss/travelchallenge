@@ -21,3 +21,8 @@ class ErrorHandler {
     }
     
 }
+
+enum ConverterError: Error {
+    case fromEntityToDto
+    case fromDtoToEntity
+}

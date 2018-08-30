@@ -10,7 +10,7 @@ import CoreData
 
 class ExpenseRepository {
     
-    func fetchAll() -> [ExpenseDto] {
+    func fetchAll() -> [ExpenseDto]? {
         guard let expenses: [Expense] = CoreDataManager.manager.fecth() else {
             return nil
         }
@@ -23,10 +23,17 @@ class ExpenseRepository {
         return expensesDto
     }
     
-    func fetchAll(of travel: Travel) -> [ExpenseDto] {
-        guard let expenses: [Expense] = CoreDataManager.manager.fecth() else {
+    func fetchAll(of travel: TravelDto) -> [ExpenseDto]? {
+        let whereDestination = NSPredicate(format: "destination == %@", travel.destination)
+        let whereDate = NSPredicate(format: "travelDate == %@", travel.travelDate as NSDate)
+        guard let travel: Travel = CoreDataManager.manager.fecth(where: NSCompoundPredicate(andPredicateWithSubpredicates: [whereDestination, whereDate]))?.first else {
             return nil
         }
+        
+        guard let expenses = travel.expenses as? Set<Expense> else {
+            return nil
+        }
+        
         var expensesDto = Array<ExpenseDto>()
         for expense in expenses {
             if let new = try? ExpenseDto(from: expense) {
@@ -35,6 +42,7 @@ class ExpenseRepository {
         }
         return expensesDto
     }
+    
     func saveAll(_ expenses: [ExpenseDto]) -> Bool {
         guard let travel: Travel = CoreDataManager.manager.fecth()?.first else {
             return false

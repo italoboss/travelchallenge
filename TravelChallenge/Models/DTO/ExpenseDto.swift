@@ -24,7 +24,7 @@ class ExpenseDto {
         let rawValue = Int(entity.category)
         guard let category = ExpenseCategory(rawValue: rawValue) else {
             // Melhorar lancamento de Erro
-            throw NSError(domain: "ExpenseDto", code: 404, userInfo: nil)
+            throw ConverterError.fromEntityToDto
         }
         self.category = category
         self.priority = Int(entity.priority)

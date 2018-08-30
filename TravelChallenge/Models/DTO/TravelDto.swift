@@ -2,7 +2,7 @@
 //  TravelDto.swift
 //  TravelChallenge
 //
-//  Created by Karina Paula on 29/08/18.
+//  Created by Italo Boss on 29/08/18.
 //  Copyright © 2018 Dinamite Pangalactica. All rights reserved.
 //
 
@@ -24,7 +24,7 @@ class TravelDto {
         guard let destination = entity.destination, let createdAt = entity.createdAt, let travelDate = entity.travelDate
         else {
             // Melhorar lancamento de Erro
-            throw NSError(domain: "TravelDto", code: 404, userInfo: nil)
+            throw ConverterError.fromEntityToDto
         }
         self.destination = destination
         self.travelDate = travelDate
