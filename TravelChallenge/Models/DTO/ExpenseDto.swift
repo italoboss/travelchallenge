@@ -32,3 +32,9 @@ class ExpenseDto {
     }
     
 }
+
+extension ExpenseDto: Equatable {
+    static func == (lhs: ExpenseDto, rhs: ExpenseDto) -> Bool {
+        return lhs.category == rhs.category
+    }
+}

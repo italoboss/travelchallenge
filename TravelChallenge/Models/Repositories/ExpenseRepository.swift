@@ -10,8 +10,10 @@ import CoreData
 
 class ExpenseRepository {
     
+    let dao = ExpenseDao()
+    
     func fetchAll() -> [ExpenseDto]? {
-        guard let expenses: [Expense] = CoreDataManager.manager.fecth() else {
+        guard let expenses: [Expense] = dao.fetchAll() else {
             return nil
         }
         var expensesDto = Array<ExpenseDto>()
@@ -24,16 +26,9 @@ class ExpenseRepository {
     }
     
     func fetchAll(of travel: TravelDto) -> [ExpenseDto]? {
-        let whereDestination = NSPredicate(format: "destination == %@", travel.destination)
-        let whereDate = NSPredicate(format: "travelDate == %@", travel.travelDate as NSDate)
-        guard let travel: Travel = CoreDataManager.manager.fecth(where: NSCompoundPredicate(andPredicateWithSubpredicates: [whereDestination, whereDate]))?.first else {
+        guard let expenses = dao.fetchAll(of: travel) else {
             return nil
         }
-        
-        guard let expenses = travel.expenses as? Set<Expense> else {
-            return nil
-        }
-        
         var expensesDto = Array<ExpenseDto>()
         for expense in expenses {
             if let new = try? ExpenseDto(from: expense) {
@@ -43,22 +38,8 @@ class ExpenseRepository {
         return expensesDto
     }
     
-    func saveAll(_ expenses: [ExpenseDto]) -> Bool {
-        guard let travel: Travel = CoreDataManager.manager.fecth()?.first else {
-            return false
-        }
-        for expense in expenses {
-            guard let category = Int16(exactly: expense.category.rawValue), let priority = Int16(exactly: expense.priority) else {
-                return false
-            }
-            let managedExpense = Expense(context: CoreDataManager.manager.persistentContainer.viewContext)
-            managedExpense.category = category
-            managedExpense.priority = priority
-            managedExpense.costValue = expense.costValue
-            managedExpense.travel = travel
-        }
-        CoreDataManager.manager.saveContext()
-        return true
+    func saveAll(_ expenses: [ExpenseDto], in travel: TravelDto) -> Bool {
+        return dao.saveAll(expenses, in: travel)
     }
     
 }

@@ -13,6 +13,7 @@ class TravelDto {
     var travelDate: Date
     var savedValue: Double
     var createdAt: Date?
+    var costValue: Double?
     
     init(with destination: String, travelDate: Date, savedValue: Double) {
         self.destination = destination
@@ -30,6 +31,14 @@ class TravelDto {
         self.travelDate = travelDate
         self.savedValue = entity.savedValue
         self.createdAt = createdAt
+        
+        var costValue = 0.0
+        if let expenses = entity.expenses as? Set<Expense> {
+            for expense in expenses {
+                costValue += expense.costValue
+            }
+        }
+        self.costValue = costValue
     }
     
 }
