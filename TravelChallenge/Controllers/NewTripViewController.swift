@@ -23,7 +23,7 @@ class NewTripViewController: UIViewController {
     
 
     @IBAction func didTapSaveButton(_ sender: Any) {
-            performSegue(withIdentifier: "NewTripToAddExpenses", sender: nil)
+        performSegue(withIdentifier: "NewTripToAddExpenses", sender: nil)
     }
     
     /*

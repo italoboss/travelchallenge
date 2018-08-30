@@ -27,15 +27,18 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vru-Wm-7fI">
-                            <rect key="frame" x="96" y="16" width="231" height="29"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <rect key="frame" x="96" y="16" width="231" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDU-Pn-WL4">
-                            <rect key="frame" x="96" y="53" width="231" height="30"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDU-Pn-WL4">
+                            <rect key="frame" x="96" y="44.5" width="231" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="JxL-B8-IUc"/>
+                            </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
@@ -45,7 +48,7 @@
                         <constraint firstItem="vru-Wm-7fI" firstAttribute="leading" secondItem="TRB-eL-6ti" secondAttribute="trailing" constant="8" symbolic="YES" id="9Nw-AH-JLK"/>
                         <constraint firstItem="vru-Wm-7fI" firstAttribute="trailing" secondItem="pDU-Pn-WL4" secondAttribute="trailing" id="Cdm-wW-hly"/>
                         <constraint firstItem="TRB-eL-6ti" firstAttribute="centerY" secondItem="S2W-zb-ACa" secondAttribute="centerY" id="I2y-4g-PUD"/>
-                        <constraint firstItem="pDU-Pn-WL4" firstAttribute="top" secondItem="vru-Wm-7fI" secondAttribute="bottom" constant="8" symbolic="YES" id="Ulk-tb-qDF"/>
+                        <constraint firstItem="pDU-Pn-WL4" firstAttribute="top" secondItem="vru-Wm-7fI" secondAttribute="bottom" constant="8" id="Ulk-tb-qDF"/>
                         <constraint firstItem="TRB-eL-6ti" firstAttribute="leading" secondItem="S2W-zb-ACa" secondAttribute="leading" constant="16" id="cBa-Qp-y5b"/>
                         <constraint firstItem="vru-Wm-7fI" firstAttribute="leading" secondItem="pDU-Pn-WL4" secondAttribute="leading" id="r5w-g3-Hg8"/>
                         <constraint firstItem="TRB-eL-6ti" firstAttribute="top" secondItem="S2W-zb-ACa" secondAttribute="top" constant="16" id="sCI-x4-eFW"/>

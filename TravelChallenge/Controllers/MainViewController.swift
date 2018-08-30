@@ -1,24 +1,26 @@
 //
-//  AddExpensesViewController.swift
+//  MainViewController.swift
 //  TravelChallenge
 //
-//  Created by Ada 2018 on 29/08/18.
+//  Created by Ada 2018 on 30/08/18.
 //  Copyright © 2018 Dinamite Pangalactica. All rights reserved.
 //
 
 import UIKit
 
-class AddExpensesViewController: UIViewController {
+class MainViewController: UIViewController {
+
     @IBOutlet weak var expensesTableView: UITableView!
+    
+    @IBOutlet weak var tripDestinationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "ExpenseCard", bundle: nil)
-        expensesTableView.register(nib, forCellReuseIdentifier: "expenseCardCell")
+        let nib = UINib(nibName: "ExpenseProgressCard", bundle: nil)
+        expensesTableView.register(nib, forCellReuseIdentifier: "expenseProgressCardCell")
         
-        expensesTableView.dataSource = self
-        // Do any additional setup after loading the view.
+        self.expensesTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +28,7 @@ class AddExpensesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapSaveButton(_ sender: Any) {
-        performSegue(withIdentifier: "AddExpensesToMain", sender: nil)
-    }
-    
+
     /*
     // MARK: - Navigation
 
@@ -39,18 +38,17 @@ class AddExpensesViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }
-extension AddExpensesViewController: UITableViewDataSource{
+extension MainViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: indexPath) as! ExpenseCardView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "expenseProgressCardCell", for: indexPath) as! ExpenseProgressCardView
         
         
         return cell
     }
-    
-    
 }
