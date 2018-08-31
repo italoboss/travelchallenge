@@ -10,6 +10,10 @@ import UIKit
 
 class NewTripViewController: UIViewController {
 
+    @IBOutlet weak var destinationTextField: UITextField!
+    @IBOutlet weak var travelDateTextField: UITextField!
+    @IBOutlet weak var savedValueTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
