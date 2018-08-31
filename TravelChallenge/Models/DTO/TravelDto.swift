@@ -27,6 +27,16 @@ class TravelDto {
         self.destination = destination
         self.travelDate = travelDate
         self.savedValue = savedValue
+        self.initExpenses()
+    }
+    
+    func initExpenses() {
+        expenses = []
+        for expenseCase in ExpenseCategory.allCases {
+            expenses.append(
+                ExpenseDto(with: expenseCase, priority: expenseCase.rawValue, costValue: 0.0)
+            )
+        }
     }
     
     init(from entity: Travel) throws {

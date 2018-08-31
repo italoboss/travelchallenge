@@ -13,3 +13,16 @@ enum ExpenseCategory: Int {
     case recreation
     case extra
 }
+
+extension ExpenseCategory {
+    static var allCases: [ExpenseCategory] {
+        let cases = [
+            ExpenseCategory.transport,
+            ExpenseCategory.hosting,
+            ExpenseCategory.feed,
+            ExpenseCategory.recreation,
+            ExpenseCategory.extra
+        ]
+        return cases
+    }
+}
