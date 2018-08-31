@@ -27,7 +27,23 @@ class NewTripViewController: UIViewController {
     
 
     @IBAction func didTapSaveButton(_ sender: Any) {
-        performSegue(withIdentifier: "NewTripToAddExpenses", sender: nil)
+        let tripDestination = destinationTextField.text!
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.init(identifier: "en_US")
+        let tripDate =  dateFormatter.date(from: destinationTextField.text!)!
+        
+        let tripSavedValue = Double(savedValueTextField.text!)!
+        
+        
+        let trip =  TravelDto.init(with: tripDestination, travelDate: tripDate, savedValue: tripSavedValue)
+        if TravelRepository().save(travel: trip){
+            
+            print(TravelRepository().getMyTravel()!)
+            
+            performSegue(withIdentifier: "NewTripToAddExpenses", sender: nil)
+            
+        }
     }
     
     /*
