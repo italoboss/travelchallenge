@@ -27,33 +27,27 @@ class NewTripViewController: UIViewController {
     
 
     @IBAction func didTapSaveButton(_ sender: Any) {
-        let tripDestination = destinationTextField.text!
         
+    }
+    
+    func saveTrip(){
+        let tripDestination = destinationTextField.text!
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.init(identifier: "en_US")
         let tripDate =  dateFormatter.date(from: destinationTextField.text!)!
-        
         let tripSavedValue = Double(savedValueTextField.text!)!
         
-        
         let trip =  TravelDto.init(with: tripDestination, travelDate: tripDate, savedValue: tripSavedValue)
+        
         if TravelRepository().save(travel: trip){
-            
-            print(TravelRepository().getMyTravel()!)
-            
-            performSegue(withIdentifier: "NewTripToAddExpenses", sender: nil)
-            
+            performSegue(withIdentifier: "NewTripToAddExpenses", sender: trip)
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let addExpensesVC = segue.destination as? AddExpensesViewController, let trip = sender as? TravelDto {
+            addExpensesVC.trip = trip
+        }
     }
-    */
 
 }

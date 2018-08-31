@@ -10,6 +10,7 @@ import UIKit
 
 class AddExpensesViewController: UIViewController {
     @IBOutlet weak var expensesTableView: UITableView!
+    var trip: TravelDto!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,27 +28,39 @@ class AddExpensesViewController: UIViewController {
     }
     
     @IBAction func didTapSaveButton(_ sender: Any) {
-        performSegue(withIdentifier: "AddExpensesToMain", sender: nil)
+    
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func  saveExpenses(){
+        for row in 0...self.trip.expenses.count{
+            let cell = self.expensesTableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: IndexPath.init(row: row, section: 0)) as! ExpenseCardView
+            
+            self.trip.expenses[row].costValue = Double(cell.goalTextField.text!) ?? 0.0
+        }
+        
+        if ExpenseRepository().saveAll(self.trip.expenses, in: self.trip){
+            performSegue(withIdentifier: "AddExpensesToMain", sender: nil)
+        }
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mainVC = segue.destination as? MainViewController, let trip = sender as? TravelDto {
+            mainVC.trip = trip
+        }
+    }
+    
 }
 extension AddExpensesViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.trip.expenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: indexPath) as! ExpenseCardView
         
+        let expense = self.trip.expenses[indexPath.row]
+        cell.categoryLabel.text = expense.category.name
+        cell.goalTextField.text = String(expense.costValue)
         
         return cell
     }

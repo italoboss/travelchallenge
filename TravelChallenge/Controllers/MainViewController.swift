@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tripDestinationLabel: UILabel!
     
+    var trip: TravelDto!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
