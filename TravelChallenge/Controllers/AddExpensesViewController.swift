@@ -14,6 +14,8 @@ class AddExpensesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = false
         
         let nib = UINib(nibName: "ExpenseCard", bundle: nil)
         expensesTableView.register(nib, forCellReuseIdentifier: "expenseCardCell")
