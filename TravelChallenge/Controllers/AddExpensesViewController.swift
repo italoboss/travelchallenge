@@ -55,15 +55,26 @@ class AddExpensesViewController: UIViewController {
 }
 extension AddExpensesViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.trip.expenses.count
+        
+        return 5
+        //return self.trip.expenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: indexPath) as! ExpenseCardView
         
         let expense = self.trip.expenses[indexPath.row]
-        cell.categoryLabel.text = expense.category.name
-        cell.goalTextField.text = String(expense.costValue)
+        
+        cell.type = ExpenseCategory(rawValue: indexPath.row)
+        
+        if indexPath.row % 2 == 0 {
+            cell.filled = true
+        }else {
+            cell.filled = false
+        }
+        
+        //cell.categoryLabel.text = expense.category.name
+        //cell.goalTextField.text = String(expense.costValue)
         
         return cell
     }

@@ -11,14 +11,23 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var expensesTableView: UITableView!
+    @IBOutlet weak var btWallet: UIButton!
     
-    @IBOutlet weak var tripDestinationLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    @IBOutlet weak var progressValueLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var countdownLabel: UILabel!
     
     var trip: TravelDto!
     let repository = TravelRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.btWallet.layer.cornerRadius = 8
+        self.btWallet.layer.borderColor = UIColor(named: "Blue-Border")?.cgColor
+        self.btWallet.layer.borderWidth = 2
         
         let nib = UINib(nibName: "ExpenseProgressCard", bundle: nil)
         expensesTableView.register(nib, forCellReuseIdentifier: "expenseProgressCardCell")

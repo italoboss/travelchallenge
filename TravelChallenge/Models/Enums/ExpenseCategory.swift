@@ -42,13 +42,13 @@ extension ExpenseCategory {
     func getName() -> String {
         switch self {
         case .feed:
-            return "Food"
+            return "Alimentação"
         case .transport:
-            return "Transportation"
+            return "Transporte"
         case .hosting:
-            return "Lodging"
+            return "Hospedagem"
         case .recreation:
-            return "Recreation"
+            return "Lazer"
         case .extra:
             return "Extras"
             

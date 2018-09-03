@@ -32,6 +32,8 @@
 		BE5D846F21381BB800DB2B80 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D846E21381BB800DB2B80 /* MainViewController.swift */; };
 		BE5D8471213829EE00DB2B80 /* ExpenseProgressCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5D8470213829EE00DB2B80 /* ExpenseProgressCard.xib */; };
 		BE5D847321382A5C00DB2B80 /* ExpenseProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D847221382A5C00DB2B80 /* ExpenseProgressCardView.swift */; };
+		BE5D8475213D80EF00DB2B80 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D8474213D80EF00DB2B80 /* NotificationController.swift */; };
+		BE5D8477213D82C900DB2B80 /* NotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D8476213D82C900DB2B80 /* NotificationContent.swift */; };
 		BE8DFACB2136E461006B5212 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFACA2136E461006B5212 /* NewTripViewController.swift */; };
 		BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */; };
 		BE8DFACF2136E5DF006B5212 /* ExpenseCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */; };
@@ -87,6 +89,8 @@
 		BE5D846E21381BB800DB2B80 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE5D8470213829EE00DB2B80 /* ExpenseProgressCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseProgressCard.xib; sourceTree = "<group>"; };
 		BE5D847221382A5C00DB2B80 /* ExpenseProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseProgressCardView.swift; sourceTree = "<group>"; };
+		BE5D8474213D80EF00DB2B80 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		BE5D8476213D82C900DB2B80 /* NotificationContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContent.swift; sourceTree = "<group>"; };
 		BE8DFACA2136E461006B5212 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 		BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewController.swift; sourceTree = "<group>"; };
 		BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseCard.xib; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				2CABAF6721372438009F54D6 /* Enums */,
 				2CABAF622136E464009F54D6 /* Repositories */,
 				2CB4D7D42138320E0056CA6B /* SwiftExtensions.swift */,
+				BE5D8476213D82C900DB2B80 /* NotificationContent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				BE8DFACA2136E461006B5212 /* NewTripViewController.swift */,
 				BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */,
 				BE5D846E21381BB800DB2B80 /* MainViewController.swift */,
+				BE5D8474213D80EF00DB2B80 /* NotificationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,12 +408,14 @@
 				BE5D847321382A5C00DB2B80 /* ExpenseProgressCardView.swift in Sources */,
 				2CABAF2C2135C011009F54D6 /* TravelChallenge.xcdatamodeld in Sources */,
 				2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */,
+				BE5D8477213D82C900DB2B80 /* NotificationContent.swift in Sources */,
 				BE8DFACB2136E461006B5212 /* NewTripViewController.swift in Sources */,
 				2CB4D7D121380EF60056CA6B /* TravelDao.swift in Sources */,
 				BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */,
 				BE45B73421397E8800AD476D /* DescriptionView.swift in Sources */,
 				2CB4D7D321381ECB0056CA6B /* ExpenseDao.swift in Sources */,
 				2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */,
+				BE5D8475213D80EF00DB2B80 /* NotificationController.swift in Sources */,
 				2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */,
 				BE5D846F21381BB800DB2B80 /* MainViewController.swift in Sources */,
 				BE8DFAD12136E85A006B5212 /* ExpenseCardView.swift in Sources */,
