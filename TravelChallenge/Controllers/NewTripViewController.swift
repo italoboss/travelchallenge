@@ -14,10 +14,28 @@ class NewTripViewController: UIViewController {
     @IBOutlet weak var travelDateTextField: UITextField!
     @IBOutlet weak var savedValueTextField: UITextField!
     
+    var delegate: AddOrEditTripDelegate?
+    var trip: TravelDto?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.loadTrip()
+        self.updateViewValues()
+    }
+    
+    func loadTrip() {
+        if let delegate = self.delegate {
+            self.trip = delegate.getTripToUpdate()
+        }
+    }
+    
+    func updateViewValues() {
+        if let trip = self.trip {
+            destinationTextField.text = trip.destination
+            travelDateTextField.text = String(describing: trip.travelDate)
+            savedValueTextField.text = String(trip.savedValue)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,21 +45,29 @@ class NewTripViewController: UIViewController {
     
 
     @IBAction func didTapSaveButton(_ sender: Any) {
-        
+        if self.saveTrip() {
+            self.dismiss(animated: true) {
+                if let delegate = self.delegate, let trip = self.trip {
+                    delegate.didSave(trip: trip)
+                }
+            }
+        }
     }
     
-    func saveTrip(){
-        let tripDestination = destinationTextField.text!
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.init(identifier: "en_US")
-        let tripDate =  dateFormatter.date(from: destinationTextField.text!)!
-        let tripSavedValue = Double(savedValueTextField.text!)!
+    func saveTrip() -> Bool {
+        guard let tripDestination = destinationTextField.text else { return false }
         
-        let trip =  TravelDto.init(with: tripDestination, travelDate: tripDate, savedValue: tripSavedValue)
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale.init(identifier: "en_US")
+//        guard let tripDateText = travelDateTextField.text else { return false }
+//        guard let tripDate =  dateFormatter.date(from: tripDateText) else { return false }
         
-        if TravelRepository().save(travel: trip){
-            performSegue(withIdentifier: "NewTripToAddExpenses", sender: trip)
-        }
+        guard let tripSavedValueText = savedValueTextField.text else { return false }
+        guard let tripSavedValue = Double(tripSavedValueText) else { return false }
+        
+        trip = TravelDto.init(with: tripDestination, travelDate: Date(), savedValue: tripSavedValue)
+        
+        return TravelRepository().save(travel: trip!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

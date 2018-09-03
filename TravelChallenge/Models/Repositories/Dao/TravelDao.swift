@@ -29,7 +29,7 @@ class TravelDao {
     
     func save(travel: TravelDto) -> Bool {
         var toSave: Travel = Travel(context: CoreDataManager.manager.persistentContainer.viewContext)
-        if let savedTravel: Travel = CoreDataManager.manager.fecth()?.first {
+        if let savedTravel: Travel = fetchMyTravel() {
             toSave = savedTravel
         }
         else {

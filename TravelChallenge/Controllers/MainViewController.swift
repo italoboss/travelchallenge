@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tripDestinationLabel: UILabel!
     
     var trip: TravelDto!
+    let repository = TravelRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,26 @@ class MainViewController: UIViewController {
         
         self.expensesTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
 
+        self.loadSavedTrip()
+        self.updateViewValues()
+    }
+    
+    func loadSavedTrip() {
+        if let storedTrip = repository.getMyTravel() {
+            trip = storedTrip
+        }
+        else {
+            trip = nil
+        }
+    }
+    
+    func updateViewValues() {
+        if let trip = self.trip {
+            navigationItem.title = trip.destination
+        }
+        else {
+            navigationItem.title = "Sem destino"
+        }
     }
     
     @IBAction func AddOrEditAction(_ sender: Any) {
@@ -37,17 +58,17 @@ class MainViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let navigation = segue.destination as? UINavigationController,
+            let newTripVc = navigation.topViewController as? NewTripViewController {
+            newTripVc.delegate = self
+        }
     }
-    */
 
 }
+
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -61,5 +82,17 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
  
+}
+
+extension MainViewController: AddOrEditTripDelegate {
+    
+    func getTripToUpdate() -> TravelDto? {
+        return self.trip
+    }
+    
+    func didSave(trip: TravelDto) {
+        self.trip = trip
+        self.updateViewValues()
+    }
     
 }
