@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import UserNotifications
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,11 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         //UINavigationBar.appearance().s
         
-        
-        
-        
-
-
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            print("Granted: \(granted)")
+        }
+        NotificationController().triggerNofication()
         return true
     }
 
