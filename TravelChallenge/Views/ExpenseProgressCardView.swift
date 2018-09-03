@@ -25,6 +25,9 @@ class ExpenseProgressCardView: UITableViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        self.main.layer.cornerRadius = 4
+    }
     
     /*
     // Only override draw() if you perform custom drawing.
