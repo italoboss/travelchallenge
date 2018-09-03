@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("Granted: \(granted)")
         }
+        NotificationController().triggerNofication()
         return true
     }
 
