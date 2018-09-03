@@ -41,7 +41,7 @@
                                 <constraint firstAttribute="width" constant="96" id="Oub-YT-Q6z"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" name="AppWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDx-2p-oxK">
@@ -50,7 +50,7 @@
                                 <constraint firstAttribute="height" constant="21" id="IBG-ul-r9g"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" name="AppWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -83,6 +83,7 @@
             <connections>
                 <outlet property="categoryLabel" destination="MDx-2p-oxK" id="b9s-G7-Qqb"/>
                 <outlet property="iconImageView" destination="Mze-kQ-o16" id="2Dt-7g-JX2"/>
+                <outlet property="main" destination="onF-RO-6Iq" id="lW2-nZ-sZe"/>
                 <outlet property="progressLabel" destination="PUN-s0-fbt" id="evu-If-BfZ"/>
                 <outlet property="progressView" destination="bEx-2Y-D3J" id="ZcB-LU-THB"/>
             </connections>
@@ -90,6 +91,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AppWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="AppWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

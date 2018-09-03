@@ -27,7 +27,10 @@ class MainViewController: UIViewController {
         self.expensesTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
 
     }
-
+    
+    @IBAction func AddOrEditAction(_ sender: Any) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,12 +56,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseProgressCardCell", for: indexPath) as! ExpenseProgressCardView
         
-        switch indexPath.row {
-        case 0:
-            cell.type = 
-        default:
-            <#code#>
-        }
+        cell.type = ExpenseCategory(rawValue: indexPath.row+1)
         
         return cell
     }

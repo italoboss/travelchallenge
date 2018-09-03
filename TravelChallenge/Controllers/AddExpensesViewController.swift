@@ -31,6 +31,9 @@ class AddExpensesViewController: UIViewController {
     
     }
     
+    @IBAction func DoneAction(_ sender: Any) {
+    }
+    
     func  saveExpenses(){
         for row in 0...self.trip.expenses.count{
             let cell = self.expensesTableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: IndexPath.init(row: row, section: 0)) as! ExpenseCardView

@@ -14,28 +14,20 @@ class ExpenseProgressCardView: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var main: UIView!
     
     var type: ExpenseCategory? {
         didSet {
-            //self.backgroundColor = type?.getColor()
-            // func getColor() -> UIColor {
-//            switch self {
-//            case .food:
-//                return UIColor(named: "Food")!
-//            case .transportation:
-//                return UIColor(named: "Transportation")!
-//            case .lodge:
-//                return UIColor(named: "Lodging")!
-//            case .recreation:
-//                return UIColor(named: "Recreation")!
-//            case .extras:
-//                return UIColor(named: "Extras")!
-//
-//            }
-//        }
+            self.main.backgroundColor = type?.getColor()
+            self.categoryLabel.text = type?.getName()
+            self.iconImageView.image = type?.getIcon()
+            
         }
     }
     
+    override func awakeFromNib() {
+        self.main.layer.cornerRadius = 4
+    }
     
     /*
     // Only override draw() if you perform custom drawing.

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Dinamite Pangalactica. All rights reserved.
 //
 
+import UIKit
+
 enum ExpenseCategory: Int {
     case transport = 1
     case hosting
@@ -36,4 +38,41 @@ extension ExpenseCategory {
         ]
         return cases
     }
+    
+    func getName() -> String {
+        switch self {
+        case .feed:
+            return "Food"
+        case .transport:
+            return "Transportation"
+        case .hosting:
+            return "Lodging"
+        case .recreation:
+            return "Recreation"
+        case .extra:
+            return "Extras"
+            
+        }
+    }
+    
+    func getIcon() -> UIImage {
+        return UIImage()
+    }
+    
+    func getColor() -> UIColor {
+        switch self {
+        case .feed:
+            return UIColor(named: "Food")!
+        case .transport:
+            return UIColor(named: "Transportation")!
+        case .hosting:
+            return UIColor(named: "Lodging")!
+        case .recreation:
+            return UIColor(named: "Recreation")!
+        case .extra:
+            return UIColor(named: "Extras")!
+
+        }
+    }
+    
 }
