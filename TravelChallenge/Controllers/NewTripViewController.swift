@@ -17,9 +17,6 @@ class NewTripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().isTranslucent = false
-        
         // Do any additional setup after loading the view.
     }
 
@@ -29,9 +26,9 @@ class NewTripViewController: UIViewController {
     }
     
 
-    @IBAction func didTapSaveButton(_ sender: Any) {
-        
-    }
+//    @IBAction func didTapSaveButton(_ sender: Any) {
+//        print("Did tap save button")
+//    }
     
     func saveTrip(){
         let tripDestination = destinationTextField.text!

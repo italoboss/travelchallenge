@@ -23,8 +23,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
         
         self.btWallet.layer.cornerRadius = 8
         self.btWallet.layer.borderColor = UIColor(named: "Blue-Border")?.cgColor
@@ -35,7 +33,7 @@ class MainViewController: UIViewController {
         
         self.expensesTableView.dataSource = self
         
-        self.expensesTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        self.expensesTableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
 
     }
     
