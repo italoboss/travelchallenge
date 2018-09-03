@@ -28,12 +28,12 @@ class TravelDao {
     }
     
     func save(travel: TravelDto) -> Bool {
-        var toSave: Travel = Travel(context: CoreDataManager.manager.persistentContainer.viewContext)
+        var toSave: Travel
         if let savedTravel: Travel = fetchMyTravel() {
             toSave = savedTravel
         }
         else {
-            return false
+            toSave = Travel(context: CoreDataManager.manager.persistentContainer.viewContext)
         }
         toSave.destination = travel.destination
         toSave.travelDate = travel.travelDate

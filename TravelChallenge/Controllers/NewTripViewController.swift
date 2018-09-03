@@ -20,7 +20,9 @@ class NewTripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-<<<<<<< HEAD
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = false
+        
         self.loadTrip()
         self.updateViewValues()
     }
@@ -37,12 +39,6 @@ class NewTripViewController: UIViewController {
             travelDateTextField.text = String(describing: trip.travelDate)
             savedValueTextField.text = String(trip.savedValue)
         }
-=======
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().isTranslucent = false
-        
-        // Do any additional setup after loading the view.
->>>>>>> 3bd640cdd3c2fcd936848527bae4f779ef13e4c0
     }
 
     override func didReceiveMemoryWarning() {

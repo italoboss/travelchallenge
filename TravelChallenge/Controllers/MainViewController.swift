@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         self.expensesTableView.dataSource = self
         
         self.expensesTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
-
+        
         self.loadSavedTrip()
         self.updateViewValues()
     }
@@ -54,21 +54,23 @@ class MainViewController: UIViewController {
     func updateViewValues() {
         if let trip = self.trip {
             navigationItem.title = trip.destination
+            // navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: nil, action: nil)
         }
         else {
             navigationItem.title = "Sem destino"
+            // navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: #selector(MainViewController.didTappedAddOrEditButton))
         }
     }
     
     @IBAction func AddOrEditAction(_ sender: Any) {
+        performSegue(withIdentifier: "TripsToNewTrip", sender: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func didTappedAddOrEditButton() {
+        performSegue(withIdentifier: "TripsToNewTrip", sender: nil)
     }
     
-
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
