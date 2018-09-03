@@ -43,4 +43,13 @@ class TravelDao {
         return true
     }
     
+    func update(savedValue: Double, from trip: TravelDto) -> Bool {
+        if let trip = self.fetch(by: trip.destination, and: trip.travelDate) {
+            trip.savedValue += savedValue
+            CoreDataManager.manager.saveContext()
+            return true
+        }
+        return false
+    }
+    
 }

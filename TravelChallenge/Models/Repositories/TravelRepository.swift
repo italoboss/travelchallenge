@@ -24,4 +24,8 @@ class TravelRepository {
         return dao.save(travel: travel)
     }
     
+    func update(savedValue: Double, from trip: TravelDto) -> Bool {
+        return dao.update(savedValue: savedValue, from: trip)
+    }
+    
 }
