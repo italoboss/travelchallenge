@@ -21,6 +21,9 @@ class MainViewController: UIViewController {
         expensesTableView.register(nib, forCellReuseIdentifier: "expenseProgressCardCell")
         
         self.expensesTableView.dataSource = self
+        
+        self.expensesTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +43,7 @@ class MainViewController: UIViewController {
     */
 
 }
-extension MainViewController: UITableViewDataSource{
+extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -48,7 +51,15 @@ extension MainViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseProgressCardCell", for: indexPath) as! ExpenseProgressCardView
         
+        switch indexPath.row {
+        case 0:
+            cell.type = 
+        default:
+            <#code#>
+        }
         
         return cell
     }
+ 
+    
 }

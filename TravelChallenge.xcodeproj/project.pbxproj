@@ -25,7 +25,9 @@
 		2CB4D7D121380EF60056CA6B /* TravelDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7D021380EF60056CA6B /* TravelDao.swift */; };
 		2CB4D7D321381ECB0056CA6B /* ExpenseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7D221381ECB0056CA6B /* ExpenseDao.swift */; };
 		2CB4D7D52138320E0056CA6B /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7D42138320E0056CA6B /* SwiftExtensions.swift */; };
-		BE45B730213979B600AD476D /* FormHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE45B72F213979B600AD476D /* FormHeader.xib */; };
+		BE45B73421397E8800AD476D /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45B73321397E8800AD476D /* DescriptionView.swift */; };
+		BE45B73621397E9B00AD476D /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE45B73521397E9B00AD476D /* DescriptionView.xib */; };
+		BE45B73821397F4200AD476D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE45B73721397F4200AD476D /* Colors.xcassets */; };
 		BE5D846F21381BB800DB2B80 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D846E21381BB800DB2B80 /* MainViewController.swift */; };
 		BE5D8471213829EE00DB2B80 /* ExpenseProgressCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5D8470213829EE00DB2B80 /* ExpenseProgressCard.xib */; };
 		BE5D847321382A5C00DB2B80 /* ExpenseProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D847221382A5C00DB2B80 /* ExpenseProgressCardView.swift */; };
@@ -77,7 +79,9 @@
 		2CB4D7D021380EF60056CA6B /* TravelDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDao.swift; sourceTree = "<group>"; };
 		2CB4D7D221381ECB0056CA6B /* ExpenseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDao.swift; sourceTree = "<group>"; };
 		2CB4D7D42138320E0056CA6B /* SwiftExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
-		BE45B72F213979B600AD476D /* FormHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormHeader.xib; sourceTree = "<group>"; };
+		BE45B73321397E8800AD476D /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		BE45B73521397E9B00AD476D /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
+		BE45B73721397F4200AD476D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BE5D846E21381BB800DB2B80 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE5D8470213829EE00DB2B80 /* ExpenseProgressCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseProgressCard.xib; sourceTree = "<group>"; };
 		BE5D847221382A5C00DB2B80 /* ExpenseProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseProgressCardView.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				2CABAF572135C1B3009F54D6 /* Views */,
 				2CABAF582135C1BE009F54D6 /* Controllers */,
 				2CABAF232135C011009F54D6 /* AppDelegate.swift */,
+				BE45B73721397F4200AD476D /* Colors.xcassets */,
 				2CABAF2D2135C012009F54D6 /* Assets.xcassets */,
 				2CABAF2F2135C012009F54D6 /* LaunchScreen.storyboard */,
 				2CABAF322135C012009F54D6 /* Info.plist */,
@@ -186,8 +191,9 @@
 				BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */,
 				BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */,
 				BE5D8470213829EE00DB2B80 /* ExpenseProgressCard.xib */,
-				BE45B72F213979B600AD476D /* FormHeader.xib */,
 				BE5D847221382A5C00DB2B80 /* ExpenseProgressCardView.swift */,
+				BE45B73321397E8800AD476D /* DescriptionView.swift */,
+				BE45B73521397E9B00AD476D /* DescriptionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,10 +357,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CABAF312135C012009F54D6 /* LaunchScreen.storyboard in Resources */,
+				BE45B73621397E9B00AD476D /* DescriptionView.xib in Resources */,
 				2CABAF2E2135C012009F54D6 /* Assets.xcassets in Resources */,
 				BE8DFACF2136E5DF006B5212 /* ExpenseCard.xib in Resources */,
+				BE45B73821397F4200AD476D /* Colors.xcassets in Resources */,
 				2CABAF292135C011009F54D6 /* Main.storyboard in Resources */,
-				BE45B730213979B600AD476D /* FormHeader.xib in Resources */,
 				BE5D8471213829EE00DB2B80 /* ExpenseProgressCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +394,7 @@
 				BE8DFACB2136E461006B5212 /* NewTripViewController.swift in Sources */,
 				2CB4D7D121380EF60056CA6B /* TravelDao.swift in Sources */,
 				BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */,
+				BE45B73421397E8800AD476D /* DescriptionView.swift in Sources */,
 				2CB4D7D321381ECB0056CA6B /* ExpenseDao.swift in Sources */,
 				2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */,
 				2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */,
