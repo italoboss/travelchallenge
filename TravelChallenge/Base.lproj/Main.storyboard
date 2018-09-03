@@ -111,6 +111,13 @@
                                     <constraint firstAttribute="trailing" secondItem="oDz-zA-M07" secondAttribute="trailing" constant="11" id="syP-Ge-hQC"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF6-Dp-Rs3">
+                                <rect key="frame" x="164" y="472" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="ScM-vM-ob1" kind="presentation" id="2IL-eq-0Ah"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -120,6 +127,7 @@
                             <constraint firstItem="p6H-aa-70q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4pF-67-dcl"/>
                             <constraint firstItem="Z5k-UM-npJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5ae-in-wVo"/>
                             <constraint firstItem="nRv-PO-NSY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5rV-fY-Lhf"/>
+                            <constraint firstItem="cF6-Dp-Rs3" firstAttribute="centerX" secondItem="nRv-PO-NSY" secondAttribute="centerX" id="6iG-hu-ISg"/>
                             <constraint firstItem="Z5k-UM-npJ" firstAttribute="top" secondItem="hDo-uM-KAz" secondAttribute="bottom" constant="20" id="G4B-in-lLN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LXz-9J-Omu" secondAttribute="trailing" constant="16" id="IRl-bN-U1x"/>
                             <constraint firstItem="nRv-PO-NSY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Lwo-1f-oc2"/>
@@ -130,6 +138,7 @@
                             <constraint firstItem="p6H-aa-70q" firstAttribute="top" secondItem="V5Y-tZ-NWk" secondAttribute="bottom" constant="22" id="aWW-hv-FNK"/>
                             <constraint firstItem="V5Y-tZ-NWk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aZp-Fc-CV8"/>
                             <constraint firstItem="hDo-uM-KAz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dUy-R6-YBL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cF6-Dp-Rs3" secondAttribute="bottom" constant="49" id="fMU-ZN-d1t"/>
                             <constraint firstItem="LXz-9J-Omu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ivO-tS-dcy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z5k-UM-npJ" secondAttribute="trailing" constant="16" id="l15-D3-WC5"/>
                             <constraint firstItem="yhY-qb-FyH" firstAttribute="top" secondItem="Z5k-UM-npJ" secondAttribute="bottom" constant="8" id="sEh-ry-Yhk"/>
@@ -146,10 +155,9 @@
                             <color key="tintColor" red="0.92941176470588238" green="0.061058198594023658" blue="0.005831523193984221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Concluir" id="I6u-Ng-qQc">
-                            <color key="tintColor" name="AppWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapSaveButton:" destination="BYZ-38-t0r" id="Htc-du-Rv2"/>
-                                <segue destination="ScM-vM-ob1" kind="presentation" id="hMy-DL-3Xo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,7 +234,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Despesas" id="8gG-Pe-jix">
                         <barButtonItem key="rightBarButtonItem" title="Pronto" id="959-p0-EG0">
-                            <color key="tintColor" name="AppWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapSaveButton:" destination="1u5-7I-1TS" id="xtr-HK-duJ"/>
                             </connections>
@@ -327,10 +335,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pacatuba" id="EJw-wi-Umm">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="t8l-O5-KW2">
-                            <color key="tintColor" name="White"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="AddOrEditAction:" destination="hxN-sD-SFS" id="mBv-cm-asa"/>
-                                <segue destination="cES-Uh-Pst" kind="presentation" id="rnP-zN-ts7"/>
+                                <segue destination="cES-Uh-Pst" kind="presentation" identifier="TripsToNewTrip" id="sCp-Vm-GET"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -370,7 +378,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="jdR-bL-vqy">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Main"/>
+                        <color key="barTintColor" red="0.082352941176470587" green="0.16862745098039217" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -431,9 +439,6 @@
     </scenes>
     <resources>
         <image name="alert" width="11" height="11"/>
-        <namedColor name="AppWhite">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Blue-Text">
             <color red="0.14117647058823529" green="0.29019607843137257" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

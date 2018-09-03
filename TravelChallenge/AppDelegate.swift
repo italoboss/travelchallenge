@@ -19,14 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UINavigationBar.appearance().shadowImage = UIImage()
-        
-        //UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        
-        
-        //UINavigationBar.appearance().backgroundColor = #colorLiteral(red: 0.08235294118, green: 0.168627451, blue: 0.2901960784, alpha: 1)
-        UINavigationBar.appearance().isTranslucent = false
-        //UINavigationBar.appearance().s
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("Granted: \(granted)")

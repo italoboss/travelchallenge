@@ -17,6 +17,9 @@ class NewTripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = false
+        
         // Do any additional setup after loading the view.
     }
 

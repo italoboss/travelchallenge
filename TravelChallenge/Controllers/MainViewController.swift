@@ -23,6 +23,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
         
         self.btWallet.layer.cornerRadius = 8
         self.btWallet.layer.borderColor = UIColor(named: "Blue-Border")?.cgColor
