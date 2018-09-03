@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExpenseCardView" customModule="TravelChallenge" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="expenseCardCell" id="iN0-l3-epB" customClass="ExpenseCardView" customModule="TravelChallenge" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -69,6 +69,7 @@
                 <outlet property="categoryLabel" destination="vru-Wm-7fI" id="9Up-uD-7Ol"/>
                 <outlet property="goalTextField" destination="pDU-Pn-WL4" id="quF-Vo-IAm"/>
                 <outlet property="iconImageView" destination="TRB-eL-6ti" id="fQw-2j-WaU"/>
+                <outlet property="main" destination="S2W-zb-ACa" id="9bP-3P-vhv"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="54"/>
         </view>

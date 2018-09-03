@@ -14,6 +14,52 @@ class ExpenseCardView: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var goalTextField: UITextField!
     
+    @IBOutlet weak var main: UIView!
+    
+    var mainColor: UIColor?
+    var icon: UIImage?
+    var name: String?
+    
+    var filled: Bool? {
+        didSet {
+            if self.filled! {
+                self.main.backgroundColor = mainColor
+                self.categoryLabel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                self.iconImageView.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                
+            } else {
+                self.main.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                self.main.layer.borderWidth = 2
+                self.main.layer.borderColor = mainColor?.cgColor
+                self.categoryLabel.tintColor = mainColor
+                self.iconImageView.tintColor = mainColor
+            }
+            
+        }
+    }
+    
+    var type: ExpenseCategory? {
+        
+        didSet {
+            self.mainColor = type?.getColor()
+            self.icon = type?.getIcon()
+            self.name = type?.getName()
+            
+            self.categoryLabel.text = self.name
+            self.iconImageView.image = self.icon
+            
+        }
+        
+        
+    }
+    
+    override func awakeFromNib() {
+        
+        self.main.layer.cornerRadius = 4
+        
+    }
+    
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
