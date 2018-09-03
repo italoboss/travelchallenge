@@ -139,7 +139,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Despesas" id="Mzl-Xb-cka">
-                                        <barButtonItem key="rightBarButtonItem" title="Pronto" id="lLE-lI-oB1"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Pronto" id="lLE-lI-oB1">
+                                            <connections>
+                                                <action selector="DoneAction:" destination="1u5-7I-1TS" id="1IP-0f-Gci"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -224,6 +228,9 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="tintColor" name="Blue-Text"/>
                                 <state key="normal" title="Atualizar Valores"/>
+                                <connections>
+                                    <segue destination="ySU-Sm-RU0" kind="presentation" id="Dsu-T4-9Dk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,6 +252,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="t8l-O5-KW2">
                             <color key="tintColor" name="White"/>
                             <connections>
+                                <action selector="AddOrEditAction:" destination="hxN-sD-SFS" id="mBv-cm-asa"/>
                                 <segue destination="cES-Uh-Pst" kind="presentation" id="rnP-zN-ts7"/>
                             </connections>
                         </barButtonItem>
@@ -257,6 +265,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiM-EY-GDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1616.8" y="71.514242878560722"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bXs-3c-Zoz">
+            <objects>
+                <viewController id="ySU-Sm-RU0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lY1-zh-3HI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="csG-fs-lSU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OuJ-D2-aUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2516" y="530"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d08-c1-pAq">
