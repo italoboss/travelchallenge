@@ -42,7 +42,7 @@ class ExpenseDao {
         if let savedExpenses = fetchAll(of: travel) {
             CoreDataManager.manager.delete(objects: savedExpenses)
         }
-        // CoreDataManager.manager.saveContext()
+        CoreDataManager.manager.saveContext()
         return true
     }
     

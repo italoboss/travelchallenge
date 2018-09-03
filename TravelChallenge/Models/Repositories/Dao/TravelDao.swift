@@ -39,6 +39,9 @@ class TravelDao {
         toSave.travelDate = travel.travelDate
         toSave.savedValue = travel.savedValue
         toSave.createdAt = Date()
+        if !ExpenseDao().saveAll(travel.expenses, in: travel) {
+            return false
+        }
         CoreDataManager.manager.saveContext()
         return true
     }

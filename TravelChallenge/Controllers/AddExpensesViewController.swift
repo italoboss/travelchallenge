@@ -9,18 +9,16 @@
 import UIKit
 
 class AddExpensesViewController: UIViewController {
-    @IBOutlet weak var expensesTableView: UITableView!
+    @IBOutlet weak var expensesListTableView: UITableView!
     var trip: TravelDto!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().isTranslucent = false
-        
+       
         let nib = UINib(nibName: "ExpenseCard", bundle: nil)
-        expensesTableView.register(nib, forCellReuseIdentifier: "expenseCardCell")
+        expensesListTableView.register(nib, forCellReuseIdentifier: "expenseCardCell")
         
-        expensesTableView.dataSource = self
+        expensesListTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -30,15 +28,13 @@ class AddExpensesViewController: UIViewController {
     }
     
     @IBAction func didTapSaveButton(_ sender: Any) {
-    
-    }
-    
-    @IBAction func DoneAction(_ sender: Any) {
+        print("Did tap save btn")
+        self.dismiss(animated: true, completion: nil)
     }
     
     func  saveExpenses(){
         for row in 0...self.trip.expenses.count{
-            let cell = self.expensesTableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: IndexPath.init(row: row, section: 0)) as! ExpenseCardView
+            let cell = self.expensesListTableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: IndexPath.init(row: row, section: 0)) as! ExpenseCardView
             
             self.trip.expenses[row].costValue = Double(cell.goalTextField.text!) ?? 0.0
         }
@@ -65,7 +61,7 @@ extension AddExpensesViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: indexPath) as! ExpenseCardView
         
-        let expense = self.trip.expenses[indexPath.row]
+        //let expense = self.trip.expenses[indexPath.row]
         
         cell.type = ExpenseCategory(rawValue: indexPath.row)
         

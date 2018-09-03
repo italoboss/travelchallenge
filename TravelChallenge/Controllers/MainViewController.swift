@@ -19,13 +19,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
     
-    var trip: TravelDto!
+    var trip: TravelDto?
     let repository = TravelRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
         
         self.btWallet.layer.cornerRadius = 8
         self.btWallet.layer.borderColor = UIColor(named: "Blue-Border")?.cgColor
@@ -35,7 +33,6 @@ class MainViewController: UIViewController {
         expensesTableView.register(nib, forCellReuseIdentifier: "expenseProgressCardCell")
         
         self.expensesTableView.dataSource = self
-        
         self.expensesTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
         
         self.loadSavedTrip()
@@ -52,22 +49,27 @@ class MainViewController: UIViewController {
     }
     
     func updateViewValues() {
-        if let trip = self.trip {
-            navigationItem.title = trip.destination
-            // navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: nil, action: nil)
-        }
-        else {
-            navigationItem.title = "Sem destino"
-            // navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: #selector(MainViewController.didTappedAddOrEditButton))
-        }
+        navigationItem.title = trip?.destination ?? "Sem destino"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(MainViewController.didTappedAddOrEditButton))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "AppWhite")
+        
+        self.updateMainProgress(currentValue: trip?.savedValue ?? 0.0, totalValue: trip?.costValue ?? 0.0)
+        
+        let countdownDays = 10
+        let dailyQuest = countdownDays > 0 ? ((trip?.costValue ?? 0.0) - (trip?.savedValue ?? 0.0)) / Double(countdownDays) : 0.0
+        
+        goalLabel.text = String(format: "Economize R$ %.2f hoje!", dailyQuest > 0 ? dailyQuest : 0.0)
+        countdownLabel.text = "Faltam \(countdownDays) dias"
     }
     
-    @IBAction func AddOrEditAction(_ sender: Any) {
-        performSegue(withIdentifier: "TripsToNewTrip", sender: nil)
+    func updateMainProgress(currentValue: Double, totalValue: Double) {
+            let percent = currentValue / totalValue
+            progressValueLabel.text = String(format: "Temos R$ %.2f de R$ %.2f", currentValue, totalValue)
+            progressView.progress = Float(percent)
     }
     
     @objc func didTappedAddOrEditButton() {
-        performSegue(withIdentifier: "TripsToNewTrip", sender: nil)
+        performSegue(withIdentifier: "MainToEditTrip", sender: nil)
     }
     
     
@@ -84,7 +86,10 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if let trip = self.trip {
+            return trip.expenses.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

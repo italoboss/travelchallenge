@@ -74,7 +74,6 @@ class CoreDataManager {
         for obj in objects {
             persistentContainer.viewContext.delete(obj)
         }
-        self.saveContext()
     }
 
 }

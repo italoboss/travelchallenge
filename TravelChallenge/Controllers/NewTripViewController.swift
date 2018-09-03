@@ -17,9 +17,13 @@ class NewTripViewController: UIViewController {
     var delegate: AddOrEditTripDelegate?
     var trip: TravelDto?
     
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        self.configureDatePickerOnTextField(travelDateTextField)
+        
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().isTranslucent = false
         
@@ -36,7 +40,7 @@ class NewTripViewController: UIViewController {
     func updateViewValues() {
         if let trip = self.trip {
             destinationTextField.text = trip.destination
-            travelDateTextField.text = String(describing: trip.travelDate)
+            travelDateTextField.text = dateFormatter.string(from: trip.travelDate)
             savedValueTextField.text = String(trip.savedValue)
         }
     }
@@ -56,22 +60,54 @@ class NewTripViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func didTapCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func saveTrip() -> Bool {
         guard let tripDestination = destinationTextField.text else { return false }
         
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.locale = Locale.init(identifier: "en_US")
-//        guard let tripDateText = travelDateTextField.text else { return false }
-//        guard let tripDate =  dateFormatter.date(from: tripDateText) else { return false }
+        guard let datePicker = travelDateTextField.inputView as? UIDatePicker else { return false }
+        let tripDate = datePicker.date
         
         guard let tripSavedValueText = savedValueTextField.text else { return false }
         guard let tripSavedValue = Double(tripSavedValueText) else { return false }
         
-        trip = TravelDto.init(with: tripDestination, travelDate: Date(), savedValue: tripSavedValue)
-        
+        trip = TravelDto.init(with: tripDestination, travelDate: tripDate, savedValue: tripSavedValue)
         return TravelRepository().save(travel: trip!)
     }
+    
+
+    func configureDatePickerOnTextField(_ sender: UITextField) {
+        let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        datePickerView.addTarget(self, action: #selector(NewTripViewController.datePickerValueChanged), for: .valueChanged)
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(NewTripViewController.doneDatePicker))
+        doneButton.tintColor = UIColor(named: "Blue-Text")
+        toolBar.setItems([space, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        sender.inputAccessoryView = toolBar
+        sender.inputView = datePickerView
+    }
+    
+    @objc func datePickerValueChanged(datePicker: UIDatePicker) {
+        travelDateTextField.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    @objc func doneDatePicker() {
+        view.endEditing(true)
+    }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addExpensesVC = segue.destination as? AddExpensesViewController, let trip = sender as? TravelDto {
