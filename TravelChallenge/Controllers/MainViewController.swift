@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var btWallet: UIButton!
     
+    @IBOutlet weak var progressView: UIProgressView!
+    
     @IBOutlet weak var progressValueLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
