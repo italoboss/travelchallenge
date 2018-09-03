@@ -11,10 +11,11 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var expensesTableView: UITableView!
-    
-    @IBOutlet weak var tripDestinationLabel: UILabel!
-    
     @IBOutlet weak var btWallet: UIButton!
+    
+    @IBOutlet weak var progressValueLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var countdownLabel: UILabel!
     
     var trip: TravelDto!
     
