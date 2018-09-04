@@ -24,15 +24,21 @@ class ExpenseCardView: UITableViewCell {
         didSet {
             if self.filled! {
                 self.main.backgroundColor = mainColor
-                self.categoryLabel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                self.categoryLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 self.iconImageView.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                
+                self.goalTextField.layer.borderWidth = 0
+                self.main.layer.borderWidth = 0
                 
             } else {
                 self.main.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 self.main.layer.borderWidth = 2
                 self.main.layer.borderColor = mainColor?.cgColor
-                self.categoryLabel.tintColor = mainColor
+                self.categoryLabel.textColor = mainColor
                 self.iconImageView.tintColor = mainColor
+                self.goalTextField.layer.borderWidth = 2
+                self.goalTextField.layer.borderColor = mainColor?.cgColor
+                
             }
             
         }
@@ -55,8 +61,8 @@ class ExpenseCardView: UITableViewCell {
     
     override func awakeFromNib() {
         
-        self.main.layer.cornerRadius = 4
-        
+        self.main.layer.cornerRadius = 5
+        self.goalTextField.layer.cornerRadius = 5
     }
     
     

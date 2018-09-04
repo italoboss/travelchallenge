@@ -21,19 +21,14 @@
                     <rect key="frame" x="16" y="8" width="343" height="104"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-eL-6ti">
-                            <rect key="frame" x="16" y="16" width="72" height="72"/>
+                            <rect key="frame" x="8" y="12" width="40" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="72" id="dA4-7Q-Rhw"/>
+                                <constraint firstAttribute="height" constant="40" id="3x1-Q8-84k"/>
+                                <constraint firstAttribute="width" constant="40" id="FSb-U1-6qR"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vru-Wm-7fI">
-                            <rect key="frame" x="96" y="16" width="231" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDU-Pn-WL4">
-                            <rect key="frame" x="96" y="44.5" width="231" height="40"/>
+                            <rect key="frame" x="56" y="52" width="271" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="JxL-B8-IUc"/>
                             </constraints>
@@ -41,18 +36,23 @@
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vru-Wm-7fI">
+                            <rect key="frame" x="56" y="20" width="146" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="TRB-eL-6ti" firstAttribute="top" secondItem="vru-Wm-7fI" secondAttribute="top" id="5Ia-Ca-xYd"/>
-                        <constraint firstItem="vru-Wm-7fI" firstAttribute="leading" secondItem="TRB-eL-6ti" secondAttribute="trailing" constant="8" symbolic="YES" id="9Nw-AH-JLK"/>
-                        <constraint firstItem="vru-Wm-7fI" firstAttribute="trailing" secondItem="pDU-Pn-WL4" secondAttribute="trailing" id="Cdm-wW-hly"/>
-                        <constraint firstItem="TRB-eL-6ti" firstAttribute="centerY" secondItem="S2W-zb-ACa" secondAttribute="centerY" id="I2y-4g-PUD"/>
-                        <constraint firstItem="pDU-Pn-WL4" firstAttribute="top" secondItem="vru-Wm-7fI" secondAttribute="bottom" constant="8" id="Ulk-tb-qDF"/>
-                        <constraint firstItem="TRB-eL-6ti" firstAttribute="leading" secondItem="S2W-zb-ACa" secondAttribute="leading" constant="16" id="cBa-Qp-y5b"/>
-                        <constraint firstItem="vru-Wm-7fI" firstAttribute="leading" secondItem="pDU-Pn-WL4" secondAttribute="leading" id="r5w-g3-Hg8"/>
-                        <constraint firstItem="TRB-eL-6ti" firstAttribute="top" secondItem="S2W-zb-ACa" secondAttribute="top" constant="16" id="sCI-x4-eFW"/>
-                        <constraint firstAttribute="trailing" secondItem="vru-Wm-7fI" secondAttribute="trailing" constant="16" id="woZ-uX-xmN"/>
+                        <constraint firstAttribute="bottom" secondItem="pDU-Pn-WL4" secondAttribute="bottom" constant="12" id="2Fx-oj-tpe"/>
+                        <constraint firstItem="pDU-Pn-WL4" firstAttribute="leading" secondItem="vru-Wm-7fI" secondAttribute="leading" id="3Pg-O6-Sxb"/>
+                        <constraint firstItem="pDU-Pn-WL4" firstAttribute="top" secondItem="vru-Wm-7fI" secondAttribute="bottom" constant="11" id="4jS-Qe-gKT"/>
+                        <constraint firstItem="vru-Wm-7fI" firstAttribute="leading" secondItem="TRB-eL-6ti" secondAttribute="trailing" constant="8" id="MhO-fy-IcC"/>
+                        <constraint firstAttribute="trailing" secondItem="pDU-Pn-WL4" secondAttribute="trailing" constant="16" id="VEv-jf-HLc"/>
+                        <constraint firstItem="TRB-eL-6ti" firstAttribute="leading" secondItem="S2W-zb-ACa" secondAttribute="leading" constant="8" id="rBm-nk-B49"/>
+                        <constraint firstItem="TRB-eL-6ti" firstAttribute="top" secondItem="S2W-zb-ACa" secondAttribute="top" constant="12" id="vgD-zn-fad"/>
+                        <constraint firstItem="vru-Wm-7fI" firstAttribute="top" secondItem="TRB-eL-6ti" secondAttribute="top" constant="8" id="yAI-4S-FfB"/>
                     </constraints>
                 </view>
             </subviews>

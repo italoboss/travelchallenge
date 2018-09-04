@@ -19,7 +19,6 @@ class AddExpensesViewController: UIViewController {
         expensesListTableView.register(nib, forCellReuseIdentifier: "expenseCardCell")
         
         expensesListTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,13 +62,11 @@ extension AddExpensesViewController: UITableViewDataSource{
         
         //let expense = self.trip.expenses[indexPath.row]
         
-        cell.type = ExpenseCategory(rawValue: indexPath.row)
+        cell.type = ExpenseCategory(rawValue: indexPath.row+1)
         
-        if indexPath.row % 2 == 0 {
-            cell.filled = true
-        }else {
-            cell.filled = false
-        }
+        // Setting the flag responsible for the cell style
+        cell.filled = false
+
         
         //cell.categoryLabel.text = expense.category.name
         //cell.goalTextField.text = String(expense.costValue)
