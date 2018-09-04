@@ -83,7 +83,11 @@ class MainViewController: UIViewController {
             newTripVc.delegate = self
         }
     }
-
+    @IBAction func handlerGesture(_ sender: UIPanGestureRecognizer) {
+        
+    }
+    
+    
 }
 
 extension MainViewController: UITableViewDataSource {
