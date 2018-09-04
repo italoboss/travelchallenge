@@ -75,6 +75,9 @@ class NewTripViewController: UIViewController {
         guard let tripSavedValue = Double(tripSavedValueText) else { return false }
         
         trip = TravelDto.init(with: tripDestination, travelDate: tripDate, savedValue: tripSavedValue)
+        if let trip = self.trip, trip.expenses.count == 0 {
+            trip.initExpenses()
+        }
         return TravelRepository().save(travel: trip!)
     }
     

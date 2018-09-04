@@ -29,6 +29,9 @@ class ExpenseDao {
         guard let savedTravel: Travel = TravelDao().fetch(by: travel.destination, and: travel.travelDate) else {
             return false
         }
+        if let savedExpenses = fetchAll(of: travel) {
+            CoreDataManager.manager.delete(objects: savedExpenses)
+        }
         for expense in expenses.distinct() {
             guard let category = Int16(exactly: expense.category.rawValue), let priority = Int16(exactly: expense.priority) else {
                 return false
@@ -38,9 +41,6 @@ class ExpenseDao {
             managedExpense.priority = priority
             managedExpense.costValue = expense.costValue
             managedExpense.travel = savedTravel
-        }
-        if let savedExpenses = fetchAll(of: travel) {
-            CoreDataManager.manager.delete(objects: savedExpenses)
         }
         CoreDataManager.manager.saveContext()
         return true

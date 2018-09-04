@@ -27,7 +27,6 @@ class TravelDto {
         self.destination = destination
         self.travelDate = travelDate
         self.savedValue = savedValue
-        self.initExpenses()
     }
     
     func initExpenses() {
