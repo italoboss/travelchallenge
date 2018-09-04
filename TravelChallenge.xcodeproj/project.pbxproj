@@ -16,7 +16,6 @@
 		2CABAF472135C012009F54D6 /* TravelChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF462135C012009F54D6 /* TravelChallengeUITests.swift */; };
 		2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF542135C19D009F54D6 /* CoreDataManager.swift */; };
 		2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */; };
-		2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF5C2135C349009F54D6 /* ColorPalette.swift */; };
 		2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF632136E480009F54D6 /* TravelRepository.swift */; };
 		2CABAF66213720D2009F54D6 /* ExpenseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF65213720D2009F54D6 /* ExpenseRepository.swift */; };
 		2CABAF692137244E009F54D6 /* ExpenseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF682137244E009F54D6 /* ExpenseCategory.swift */; };
@@ -26,6 +25,12 @@
 		2CB4D7D321381ECB0056CA6B /* ExpenseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7D221381ECB0056CA6B /* ExpenseDao.swift */; };
 		2CB4D7D52138320E0056CA6B /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7D42138320E0056CA6B /* SwiftExtensions.swift */; };
 		2CB4D7DB213D7F750056CA6B /* AddOrEditTripDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7DA213D7F750056CA6B /* AddOrEditTripDelegate.swift */; };
+		2CB4D7DD213EA7EA0056CA6B /* ExpenseCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7DC213EA7EA0056CA6B /* ExpenseCategoryTests.swift */; };
+		2CB4D7E1213EBDFA0056CA6B /* TravelDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E0213EBDFA0056CA6B /* TravelDtoTests.swift */; };
+		2CB4D7E3213EC9C30056CA6B /* ExpenseDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E2213EC9C30056CA6B /* ExpenseDtoTests.swift */; };
+		2CB4D7E5213ECF460056CA6B /* SwiftExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */; };
+		2CB4D7E8213EFD090056CA6B /* TravelDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */; };
+		2CB4D7EB213F2FDC0056CA6B /* ExpenseDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */; };
 		BE45B73821397F4200AD476D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE45B73721397F4200AD476D /* Colors.xcassets */; };
 		BE5D846F21381BB800DB2B80 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D846E21381BB800DB2B80 /* MainViewController.swift */; };
 		BE5D8471213829EE00DB2B80 /* ExpenseProgressCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5D8470213829EE00DB2B80 /* ExpenseProgressCard.xib */; };
@@ -71,7 +76,6 @@
 		2CABAF482135C012009F54D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CABAF542135C19D009F54D6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		2CABAF5C2135C349009F54D6 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		2CABAF632136E480009F54D6 /* TravelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRepository.swift; sourceTree = "<group>"; };
 		2CABAF65213720D2009F54D6 /* ExpenseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRepository.swift; sourceTree = "<group>"; };
 		2CABAF682137244E009F54D6 /* ExpenseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategory.swift; sourceTree = "<group>"; };
@@ -81,6 +85,12 @@
 		2CB4D7D221381ECB0056CA6B /* ExpenseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDao.swift; sourceTree = "<group>"; };
 		2CB4D7D42138320E0056CA6B /* SwiftExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		2CB4D7DA213D7F750056CA6B /* AddOrEditTripDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditTripDelegate.swift; sourceTree = "<group>"; };
+		2CB4D7DC213EA7EA0056CA6B /* ExpenseCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryTests.swift; sourceTree = "<group>"; };
+		2CB4D7E0213EBDFA0056CA6B /* TravelDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDtoTests.swift; sourceTree = "<group>"; };
+		2CB4D7E2213EC9C30056CA6B /* ExpenseDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDtoTests.swift; sourceTree = "<group>"; };
+		2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensionsTests.swift; sourceTree = "<group>"; };
+		2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDaoTests.swift; sourceTree = "<group>"; };
+		2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDaoTests.swift; sourceTree = "<group>"; };
 		BE45B73721397F4200AD476D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BE5D846E21381BB800DB2B80 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE5D8470213829EE00DB2B80 /* ExpenseProgressCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseProgressCard.xib; sourceTree = "<group>"; };
@@ -162,8 +172,12 @@
 		2CABAF3A2135C012009F54D6 /* TravelChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				2CB4D7E6213EFBC30056CA6B /* Dao */,
+				2CB4D7DF213EBD2A0056CA6B /* Dto */,
+				2CB4D7DE213EBD200056CA6B /* Enums */,
 				2CABAF3B2135C012009F54D6 /* TravelChallengeTests.swift */,
 				2CABAF3D2135C012009F54D6 /* Info.plist */,
+				2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */,
 			);
 			path = TravelChallengeTests;
 			sourceTree = "<group>";
@@ -214,7 +228,6 @@
 		2CABAF5B2135C335009F54D6 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				2CABAF5C2135C349009F54D6 /* ColorPalette.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -261,6 +274,32 @@
 				2CB4D7DA213D7F750056CA6B /* AddOrEditTripDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2CB4D7DE213EBD200056CA6B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4D7DC213EA7EA0056CA6B /* ExpenseCategoryTests.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2CB4D7DF213EBD2A0056CA6B /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4D7E0213EBDFA0056CA6B /* TravelDtoTests.swift */,
+				2CB4D7E2213EC9C30056CA6B /* ExpenseDtoTests.swift */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
+		2CB4D7E6213EFBC30056CA6B /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */,
+				2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */,
+			);
+			path = Dao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,7 +452,6 @@
 				BE8DFAD12136E85A006B5212 /* ExpenseCardView.swift in Sources */,
 				2CABAF242135C011009F54D6 /* AppDelegate.swift in Sources */,
 				2CABAF66213720D2009F54D6 /* ExpenseRepository.swift in Sources */,
-				2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */,
 				2CB4D7DB213D7F750056CA6B /* AddOrEditTripDelegate.swift in Sources */,
 				2CB4D7D52138320E0056CA6B /* SwiftExtensions.swift in Sources */,
 				2CABAF6C21372655009F54D6 /* ExpenseDto.swift in Sources */,
@@ -425,6 +463,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB4D7E8213EFD090056CA6B /* TravelDaoTests.swift in Sources */,
+				2CB4D7E5213ECF460056CA6B /* SwiftExtensionsTests.swift in Sources */,
+				2CB4D7E1213EBDFA0056CA6B /* TravelDtoTests.swift in Sources */,
+				2CB4D7DD213EA7EA0056CA6B /* ExpenseCategoryTests.swift in Sources */,
+				2CB4D7E3213EC9C30056CA6B /* ExpenseDtoTests.swift in Sources */,
+				2CB4D7EB213F2FDC0056CA6B /* ExpenseDaoTests.swift in Sources */,
 				2CABAF3C2135C012009F54D6 /* TravelChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

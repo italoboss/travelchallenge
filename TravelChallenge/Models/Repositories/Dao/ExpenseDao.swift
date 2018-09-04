@@ -10,8 +10,14 @@ import CoreData
 
 class ExpenseDao {
     
+    private var coreDataManager: CoreDataManager
+    
+    init(coreDataManager: CoreDataManager = CoreDataManager.manager) {
+        self.coreDataManager = coreDataManager
+    }
+    
     func fetchAll() -> [Expense]? {
-        guard let expenses: [Expense] = CoreDataManager.manager.fecth() else {
+        guard let expenses: [Expense] = coreDataManager.fecth() else {
             return nil
         }
         return expenses
@@ -30,19 +36,19 @@ class ExpenseDao {
             return false
         }
         if let savedExpenses = fetchAll(of: travel) {
-            CoreDataManager.manager.delete(objects: savedExpenses)
+            coreDataManager.delete(objects: savedExpenses)
         }
         for expense in expenses.distinct() {
             guard let category = Int16(exactly: expense.category.rawValue), let priority = Int16(exactly: expense.priority) else {
                 return false
             }
-            let managedExpense = Expense(context: CoreDataManager.manager.persistentContainer.viewContext)
+            let managedExpense = Expense(context: coreDataManager.persistentContainer.viewContext)
             managedExpense.category = category
             managedExpense.priority = priority
             managedExpense.costValue = expense.costValue
             managedExpense.travel = savedTravel
         }
-        CoreDataManager.manager.saveContext()
+        coreDataManager.saveContext()
         return true
     }
     

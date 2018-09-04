@@ -12,14 +12,23 @@ import CoreData
 class CoreDataManager {
     
     static let manager = CoreDataManager()
+    private var storeType: String? = nil
     
     private init() { }
     
+    init(type: String = NSSQLiteStoreType) {
+        self.storeType = type
+    }
     
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TravelChallenge")
+        if let storeType = self.storeType {
+            let description = container.persistentStoreDescriptions.first
+            description?.type = storeType
+        }
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 /*
@@ -52,7 +61,8 @@ class CoreDataManager {
     
     func fecth<T: NSManagedObject>(where predicates: NSCompoundPredicate? = nil, sorting sorters: [NSSortDescriptor]? = nil) -> [T]? {
         let context = persistentContainer.viewContext
-        let request = T.fetchRequest()
+        let entityName = String(describing: T.self)
+        let request = NSFetchRequest<T>(entityName: entityName)
         if let conditions = predicates {
             request.predicate = conditions
         }
@@ -61,7 +71,7 @@ class CoreDataManager {
         }
         
         do {
-            let records = try context.fetch(request) as? [T]
+            let records = try context.fetch(request)
             return records
         } catch {
             let nserror = error as NSError
