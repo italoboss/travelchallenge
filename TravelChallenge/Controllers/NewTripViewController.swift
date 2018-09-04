@@ -19,6 +19,8 @@ class NewTripViewController: UIViewController {
     
     let dateFormatter = DateFormatter()
     
+    let interactor = Interactor()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -29,6 +31,7 @@ class NewTripViewController: UIViewController {
         
         self.loadTrip()
         self.updateViewValues()
+        
     }
     
     func loadTrip() {
@@ -113,9 +116,20 @@ class NewTripViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addExpensesVC = segue.destination as? AddExpensesViewController, let trip = sender as? TravelDto {
-            addExpensesVC.trip = trip
+//        if let addExpensesVC = segue.destination as? AddExpensesViewController, let trip = sender as? TravelDto {
+//            addExpensesVC.trip = trip
+//        }
+        if let navigation = segue.destination as? UINavigationController, let addExpensesVC = navigation.topViewController as? AddExpensesViewController{
+            navigation.transitioningDelegate = self
+            //addExpensesVC.transitioningDelegate = self
+            addExpensesVC.interactor = self.interactor
         }
     }
-
+}
+extension NewTripViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissAnimator()
+    }
+    
 }

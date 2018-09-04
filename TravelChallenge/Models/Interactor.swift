@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Interaction: UIPercentDrivenInteractiveTransition {
+class Interactor: UIPercentDrivenInteractiveTransition {
     var hasStartd = false
     var shouldFinish = false
 }

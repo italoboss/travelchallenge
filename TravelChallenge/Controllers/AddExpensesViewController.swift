@@ -12,6 +12,8 @@ class AddExpensesViewController: UIViewController {
     @IBOutlet weak var expensesListTableView: UITableView!
     var trip: TravelDto!
     
+    var interactor: Interactor? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -50,7 +52,7 @@ class AddExpensesViewController: UIViewController {
     }
     
 }
-extension AddExpensesViewController: UITableViewDataSource{
+extension AddExpensesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 5
@@ -73,6 +75,4 @@ extension AddExpensesViewController: UITableViewDataSource{
         
         return cell
     }
-    
-    
 }
