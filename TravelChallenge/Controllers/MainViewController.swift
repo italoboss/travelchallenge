@@ -50,7 +50,8 @@ class MainViewController: UIViewController {
     
     func updateViewValues() {
         navigationItem.title = trip?.destination ?? "Sem destino"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(MainViewController.didTappedAddOrEditButton))
+        let systemItem: UIBarButtonSystemItem = trip == nil ? .add : .compose
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: systemItem, target: self, action: #selector(MainViewController.didTappedAddOrEditButton))
         navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "AppWhite")
         
         self.updateMainProgress(currentValue: trip?.savedValue ?? 0.0, totalValue: trip?.costValue ?? 0.0)
@@ -60,6 +61,7 @@ class MainViewController: UIViewController {
         
         goalLabel.text = String(format: "Economize R$ %.2f hoje!", dailyQuest > 0 ? dailyQuest : 0.0)
         countdownLabel.text = "Faltam \(countdownDays) dias"
+        self.expensesTableView.reloadData()
     }
     
     func updateMainProgress(currentValue: Double, totalValue: Double) {
