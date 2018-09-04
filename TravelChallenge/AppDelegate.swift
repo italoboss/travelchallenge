@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Granted: \(granted)")
         }
         NotificationController().triggerNofication()
+        
+        
+        
         return true
     }
 
