@@ -577,10 +577,10 @@
             </objects>
             <point key="canvasLocation" x="2857" y="-319"/>
         </scene>
-        <!--Add Expenses Navigation View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="7Hh-Rs-YU7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ScM-vM-ob1" customClass="AddExpensesNavigationViewController" customModule="TravelChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ScM-vM-ob1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="WS6-g0-Kc2">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -600,11 +600,6 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqe-f3-job" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="l4G-JB-hjH">
-                    <connections>
-                        <action selector="handlerAction:" destination="ScM-vM-ob1" id="Eff-5C-gCr"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3620" y="-319"/>
         </scene>
