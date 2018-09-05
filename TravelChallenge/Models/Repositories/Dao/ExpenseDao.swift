@@ -24,7 +24,7 @@ class ExpenseDao {
     }
     
     func fetchAll(of travel: TravelDto) -> [Expense]? {
-        guard let savedTravel: Travel = TravelDao().fetch(by: travel.destination, and: travel.travelDate), let expenses = savedTravel.expenses as? Set<Expense> else {
+        guard let savedTravel: Travel = TravelDao(coreDataManager: coreDataManager).fetch(by: travel.destination, and: travel.travelDate), let expenses = savedTravel.expenses as? Set<Expense> else {
             return nil
         }
         let result = Array<Expense>(expenses)
@@ -32,7 +32,7 @@ class ExpenseDao {
     }
     
     func saveAll(_ expenses: [ExpenseDto], in travel: TravelDto) -> Bool {
-        guard let savedTravel: Travel = TravelDao().fetch(by: travel.destination, and: travel.travelDate) else {
+        guard let savedTravel: Travel = TravelDao(coreDataManager: coreDataManager).fetch(by: travel.destination, and: travel.travelDate) else {
             return false
         }
         if let savedExpenses = fetchAll(of: travel) {

@@ -36,7 +36,7 @@ class TravelDaoTests: XCTestCase {
     }
     
     func test_saveTravel_success() {
-        let travel = TravelDto(with: "", travelDate: Date(), savedValue: 0.0)
+        let travel = TravelDto(with: "UpdatedTravel", travelDate: Date(), savedValue: 0.0)
         let result = sut.save(travel: travel)
         XCTAssertTrue(result)
     }

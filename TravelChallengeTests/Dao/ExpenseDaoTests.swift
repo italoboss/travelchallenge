@@ -2,7 +2,7 @@
 //  ExpenseDaoTests.swift
 //  TravelChallengeTests
 //
-//  Created by Karina Paula on 04/09/18.
+//  Created by Italo Boss on 04/09/18.
 //  Copyright © 2018 Dinamite Pangalactica. All rights reserved.
 //
 
@@ -23,6 +23,27 @@ class ExpenseDaoTests: XCTestCase {
     func test_fetchAllStored_notFound() {
         let allExpenses = ExpenseDao(coreDataManager: CoreDataManager(type: NSBinaryStoreType)).fetchAll()
         XCTAssert(allExpenses == nil || allExpenses?.count == 0)
+    }
+    
+    func test_fetchAllByTravel_found() {
+        let dto = TravelDto(with: "MockTravel", travelDate: Date(timeIntervalSinceReferenceDate: 0), savedValue: 0.0)
+        let result = sut.fetchAll(of: dto)
+        XCTAssertEqual(result?.count, 2)
+    }
+    
+    func test_fetchAllByTravel_notFound() {
+        let dto = TravelDto(with: "NotAMockTravel", travelDate: Date(), savedValue: 0.0)
+        let result = sut.fetchAll(of: dto)
+        XCTAssert(result == nil || result?.count == 0)
+    }
+    
+    func test_saveAllExpensesInTravel_success() {
+        let travel = TravelDto(with: "MockTravel", travelDate: Date(timeIntervalSinceReferenceDate: 0), savedValue: 0.0)
+        let exp1 = ExpenseDto(with: .transport, priority: 1, costValue: 10.0)
+        let exp2 = ExpenseDto(with: .hosting, priority: 2, costValue: 20.0)
+        
+        let result = sut.saveAll([exp1, exp2], in: travel)
+        XCTAssertTrue(result)
     }
     
     override func setUp() {
@@ -57,6 +78,7 @@ class ExpenseDaoTests: XCTestCase {
         exp2.setValue(200.0, forKey: "costValue")
         exp2.setValue(2, forKey: "priority")
         exp2.setValue(travel, forKey: "travel")
+        //travel.setValue(NSSet(array: [exp1, exp2]), forKey: "expenses")
         
         do {
             try mockPersistantContext.save()
