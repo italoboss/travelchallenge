@@ -45,6 +45,7 @@ class AddExpensesViewController: UIViewController {
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let mainVC = segue.destination as? MainViewController, let trip = sender as? TravelDto {
             mainVC.trip = trip

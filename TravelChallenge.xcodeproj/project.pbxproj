@@ -38,6 +38,7 @@
 		BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */; };
 		BE8DFACF2136E5DF006B5212 /* ExpenseCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */; };
 		BE8DFAD12136E85A006B5212 /* ExpenseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */; };
+		BE90C2502140138E00C11B11 /* AddExpensesNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90C24F2140138E00C11B11 /* AddExpensesNavigationViewController.swift */; };
 		BEFCC288213FF2CF001E2200 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCC287213FF2CF001E2200 /* WalletViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewController.swift; sourceTree = "<group>"; };
 		BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseCard.xib; sourceTree = "<group>"; };
 		BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExpenseCardView.swift; path = TravelChallenge/Views/ExpenseCardView.swift; sourceTree = SOURCE_ROOT; };
+		BE90C24F2140138E00C11B11 /* AddExpensesNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesNavigationViewController.swift; sourceTree = "<group>"; };
 		BEFCC287213FF2CF001E2200 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 			children = (
 				BE8DFACA2136E461006B5212 /* NewTripViewController.swift */,
 				BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */,
+				BE90C24F2140138E00C11B11 /* AddExpensesNavigationViewController.swift */,
 				BE5D846E21381BB800DB2B80 /* MainViewController.swift */,
 				BE5D8474213D80EF00DB2B80 /* NotificationController.swift */,
 				BEFCC287213FF2CF001E2200 /* WalletViewController.swift */,
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CABAF6E21372E97009F54D6 /* TravelDto.swift in Sources */,
+				BE90C2502140138E00C11B11 /* AddExpensesNavigationViewController.swift in Sources */,
 				BE5D847321382A5C00DB2B80 /* ExpenseProgressCardView.swift in Sources */,
 				2CABAF2C2135C011009F54D6 /* TravelChallenge.xcdatamodeld in Sources */,
 				2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */,

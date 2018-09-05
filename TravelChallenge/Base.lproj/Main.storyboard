@@ -420,12 +420,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y9-Tl-qVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="wpn-5B-EQN">
-                    <connections>
-                        <action selector="handlerGesture:" destination="hI9-vP-aHI" id="7Gb-pW-You"/>
-                    </connections>
-                </panGestureRecognizer>
-                <exit id="hI9-vP-aHI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3620" y="401"/>
         </scene>
@@ -583,14 +577,15 @@
             </objects>
             <point key="canvasLocation" x="2857" y="-319"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Expenses Navigation View Controller-->
         <scene sceneID="7Hh-Rs-YU7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ScM-vM-ob1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ScM-vM-ob1" customClass="AddExpensesNavigationViewController" customModule="TravelChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="WS6-g0-Kc2">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <gestureRecognizers/>
                         <color key="barTintColor" red="0.08235294118" green="0.16862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -605,6 +600,11 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqe-f3-job" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="l4G-JB-hjH">
+                    <connections>
+                        <action selector="handlerAction:" destination="ScM-vM-ob1" id="Eff-5C-gCr"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3620" y="-319"/>
         </scene>
