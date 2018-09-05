@@ -15,7 +15,7 @@
         <!--Carteira-->
         <scene sceneID="qnu-p0-TXD">
             <objects>
-                <viewController id="2kc-9g-jk0" sceneMemberID="viewController">
+                <viewController id="2kc-9g-jk0" customClass="WalletViewController" customModule="TravelChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d1n-3s-IGi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
                                 <rect key="frame" x="75" y="167" width="225" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51B-0p-RqE">
                                 <rect key="frame" x="308" y="167" width="30" height="30"/>
@@ -177,11 +177,26 @@
                     <navigationItem key="navigationItem" title="Carteira" id="zk1-7Q-8y4">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="Yqh-gT-AyJ">
                             <color key="tintColor" red="0.81394236636929462" green="0.049784605638403083" blue="0.012160220993502549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didTapCancel:" destination="2kc-9g-jk0" id="yZF-Bz-esq"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="D0Z-3g-QCn">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapSave:" destination="2kc-9g-jk0" id="u5a-DL-xO3"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="incomeExpenseLabel" destination="YLt-aq-tqP" id="Mn9-hw-3Vb"/>
+                        <outlet property="newWalletValueLabel" destination="C3Z-Qv-MXl" id="MOb-BK-cFl"/>
+                        <outlet property="spareOrSpendLabel" destination="LKE-33-9pA" id="t4C-B0-Y3u"/>
+                        <outlet property="spareOrSpendSignLabel" destination="761-Iu-P6p" id="Y9a-8V-hmA"/>
+                        <outlet property="valueTextField" destination="khh-k2-Phz" id="Ypx-ue-U6L"/>
+                        <outlet property="walletSegControl" destination="6ph-JY-U9P" id="ERL-CG-D1D"/>
+                        <outlet property="walletValueLabel" destination="VcI-38-XdC" id="qyh-T8-6ip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pue-6f-la0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
