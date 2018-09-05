@@ -126,6 +126,7 @@ class NewTripViewController: UIViewController {
         }
     }
 }
+
 extension NewTripViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

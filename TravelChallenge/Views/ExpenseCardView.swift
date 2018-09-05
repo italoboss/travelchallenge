@@ -63,6 +63,9 @@ class ExpenseCardView: UITableViewCell {
         
         self.main.layer.cornerRadius = 5
         self.goalTextField.layer.cornerRadius = 5
+        
+        self.goalTextField.delegate = self
+        
     }
     
     
@@ -75,3 +78,40 @@ class ExpenseCardView: UITableViewCell {
     */
     
 }
+
+extension ExpenseCardView: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+ 
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print(textField.text!)
+        
+        guard let t = textField.text else { return true }
+        
+        if string != "" {
+            if let number = Double("\(t)\(string)") {
+                print("\(t) - \(number)")
+                self.filled = (number > 0)
+            }
+        } else {
+            if let number = Double("\(t.dropLast())") {
+                print("\(t) - \(number)")
+                self.filled = (number > 0)
+            } else {
+                self.filled = false            }
+        }
+        
+        return true
+    }
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return true;
+    }
+    
+}
+

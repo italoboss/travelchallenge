@@ -38,6 +38,7 @@
 		BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */; };
 		BE8DFACF2136E5DF006B5212 /* ExpenseCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */; };
 		BE8DFAD12136E85A006B5212 /* ExpenseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */; };
+		BEFCC288213FF2CF001E2200 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCC287213FF2CF001E2200 /* WalletViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewController.swift; sourceTree = "<group>"; };
 		BE8DFACE2136E5DF006B5212 /* ExpenseCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseCard.xib; sourceTree = "<group>"; };
 		BE8DFAD02136E85A006B5212 /* ExpenseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExpenseCardView.swift; path = TravelChallenge/Views/ExpenseCardView.swift; sourceTree = SOURCE_ROOT; };
+		BEFCC287213FF2CF001E2200 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				BE8DFACC2136E4CE006B5212 /* AddExpensesViewController.swift */,
 				BE5D846E21381BB800DB2B80 /* MainViewController.swift */,
 				BE5D8474213D80EF00DB2B80 /* NotificationController.swift */,
+				BEFCC287213FF2CF001E2200 /* WalletViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				2CABAF2C2135C011009F54D6 /* TravelChallenge.xcdatamodeld in Sources */,
 				2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */,
 				BE5D8477213D82C900DB2B80 /* NotificationContent.swift in Sources */,
+				BEFCC288213FF2CF001E2200 /* WalletViewController.swift in Sources */,
 				BE8DFACB2136E461006B5212 /* NewTripViewController.swift in Sources */,
 				2CB4D7D121380EF60056CA6B /* TravelDao.swift in Sources */,
 				BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */,
