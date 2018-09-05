@@ -42,7 +42,7 @@ extension DismissAnimator: UIViewControllerAnimatedTransitioning{
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 3.0
+        return 0.5
     }
     
 }
