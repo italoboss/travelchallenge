@@ -396,6 +396,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="TLh-GD-A45" firstAttribute="top" secondItem="1ZM-4N-Alo" secondAttribute="top" id="1DY-5l-rRU"/>
                             <constraint firstItem="ggU-YE-6KG" firstAttribute="leading" secondItem="1ZM-4N-Alo" secondAttribute="leading" id="2TI-Iu-lR6"/>
@@ -406,6 +407,9 @@
                             <constraint firstItem="TLh-GD-A45" firstAttribute="leading" secondItem="1ZM-4N-Alo" secondAttribute="leading" id="zw9-99-OCs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1ZM-4N-Alo"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qL5-xg-Uwd" appends="YES" id="sDW-Tr-zFL"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Despesas" id="8gG-Pe-jix">
                         <barButtonItem key="rightBarButtonItem" title="Pronto" id="959-p0-EG0">
@@ -420,6 +424,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y9-Tl-qVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="qL5-xg-Uwd">
+                    <connections>
+                        <action selector="handlerPan:" destination="1u5-7I-1TS" id="DOF-XG-paN"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3620" y="401"/>
         </scene>

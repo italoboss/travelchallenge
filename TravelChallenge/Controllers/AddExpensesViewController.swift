@@ -45,6 +45,9 @@ class AddExpensesViewController: UIViewController {
         }
     }
     
+    @IBAction func handlerPan(_ sender: UIPanGestureRecognizer) {
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let mainVC = segue.destination as? MainViewController, let trip = sender as? TravelDto {
