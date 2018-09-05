@@ -132,7 +132,16 @@
                                     <segment title="Gastei"/>
                                 </segments>
                                 <color key="tintColor" name="Blue-Text"/>
+                                <connections>
+                                    <action selector="changingMoneySegAction:" destination="2kc-9g-jk0" eventType="valueChanged" id="cis-TC-VX7"/>
+                                </connections>
                             </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JuliusHappy" translatesAutoresizingMaskIntoConstraints="NO" id="bWz-w2-WZ3">
+                                <rect key="frame" x="0.0" y="401" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="m1P-Al-vFg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -143,6 +152,7 @@
                             <constraint firstItem="Wxi-LH-W2G" firstAttribute="leading" secondItem="8FG-uZ-oNE" secondAttribute="leading" id="6oj-Qz-5O1"/>
                             <constraint firstItem="khh-k2-Phz" firstAttribute="top" secondItem="6ph-JY-U9P" secondAttribute="bottom" constant="24" id="9Tr-JD-4Sb"/>
                             <constraint firstItem="761-Iu-P6p" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LKE-33-9pA" secondAttribute="trailing" constant="18" id="AI9-CS-dgQ"/>
+                            <constraint firstItem="bWz-w2-WZ3" firstAttribute="leading" secondItem="8FG-uZ-oNE" secondAttribute="leading" id="Dwq-Y5-vhQ"/>
                             <constraint firstItem="khh-k2-Phz" firstAttribute="centerX" secondItem="8FG-uZ-oNE" secondAttribute="centerX" id="ERa-uo-Je0"/>
                             <constraint firstItem="khh-k2-Phz" firstAttribute="leading" secondItem="6ph-JY-U9P" secondAttribute="leading" id="Gfh-pu-KrZ"/>
                             <constraint firstItem="YLt-aq-tqP" firstAttribute="top" secondItem="VcI-38-XdC" secondAttribute="bottom" constant="16" id="IEM-7i-jMk"/>
@@ -160,6 +170,7 @@
                             <constraint firstItem="dri-He-s57" firstAttribute="leading" secondItem="khh-k2-Phz" secondAttribute="leading" id="dWc-e1-HlK"/>
                             <constraint firstItem="LKE-33-9pA" firstAttribute="leading" secondItem="dri-He-s57" secondAttribute="leading" id="eJp-Lx-nrn"/>
                             <constraint firstItem="Wxi-LH-W2G" firstAttribute="trailing" secondItem="8FG-uZ-oNE" secondAttribute="trailing" id="eXJ-5B-XV6"/>
+                            <constraint firstItem="8FG-uZ-oNE" firstAttribute="trailing" secondItem="bWz-w2-WZ3" secondAttribute="trailing" constant="225" id="ezv-vm-186"/>
                             <constraint firstItem="51B-0p-RqE" firstAttribute="height" secondItem="aAC-eN-wlg" secondAttribute="height" id="ga9-7m-be2"/>
                             <constraint firstItem="VcI-38-XdC" firstAttribute="trailing" secondItem="khh-k2-Phz" secondAttribute="trailing" id="k5f-zr-hcb"/>
                             <constraint firstItem="24l-rG-NGf" firstAttribute="leading" secondItem="761-Iu-P6p" secondAttribute="leading" id="nG1-cL-KhJ"/>
@@ -170,6 +181,7 @@
                             <constraint firstItem="761-Iu-P6p" firstAttribute="leading" secondItem="VcI-38-XdC" secondAttribute="leading" id="uSP-c4-bZe"/>
                             <constraint firstItem="LKE-33-9pA" firstAttribute="top" secondItem="dri-He-s57" secondAttribute="bottom" constant="16" id="ujy-jp-trH"/>
                             <constraint firstItem="24l-rG-NGf" firstAttribute="trailing" secondItem="YLt-aq-tqP" secondAttribute="trailing" id="w1N-JD-5LD"/>
+                            <constraint firstItem="8FG-uZ-oNE" firstAttribute="bottom" secondItem="bWz-w2-WZ3" secondAttribute="bottom" id="wls-Lk-Iw1"/>
                             <constraint firstItem="C3Z-Qv-MXl" firstAttribute="top" secondItem="24l-rG-NGf" secondAttribute="bottom" constant="11" id="xc3-dC-mdG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8FG-uZ-oNE"/>
@@ -190,11 +202,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="incomeExpenseLabel" destination="YLt-aq-tqP" id="Mn9-hw-3Vb"/>
+                        <outlet property="juliusImageView" destination="bWz-w2-WZ3" id="uIa-B7-t1S"/>
                         <outlet property="newWalletValueLabel" destination="C3Z-Qv-MXl" id="MOb-BK-cFl"/>
                         <outlet property="spareOrSpendLabel" destination="LKE-33-9pA" id="t4C-B0-Y3u"/>
                         <outlet property="spareOrSpendSignLabel" destination="761-Iu-P6p" id="Y9a-8V-hmA"/>
                         <outlet property="valueTextField" destination="khh-k2-Phz" id="Ypx-ue-U6L"/>
-                        <outlet property="walletSegControl" destination="6ph-JY-U9P" id="ERL-CG-D1D"/>
+                        <outlet property="walletSegControl" destination="6ph-JY-U9P" id="vaH-be-3yx"/>
                         <outlet property="walletValueLabel" destination="VcI-38-XdC" id="qyh-T8-6ip"/>
                     </connections>
                 </viewController>
@@ -639,6 +652,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="JuliusHappy" width="700" height="700"/>
         <image name="up" width="32" height="32"/>
         <namedColor name="AppWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

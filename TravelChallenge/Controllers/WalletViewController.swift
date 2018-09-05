@@ -20,10 +20,22 @@ class WalletViewController: UIViewController {
   
     @IBOutlet weak var newWalletValueLabel: UILabel!
     
+    @IBOutlet weak var juliusImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    @IBAction func changingMoneySegAction(_ sender: Any) {
+        switch walletSegControl.selectedSegmentIndex {
+        case 0:
+            juliusImageView.image = #imageLiteral(resourceName: "JuliusHappy")
+        case 1:
+            juliusImageView.image = #imageLiteral(resourceName: "JuliusAngry")
+        default:
+            juliusImageView.image = #imageLiteral(resourceName: "JuliusHappy")
+        }
     }
     
     @IBAction func didTapSave(_ sender: Any) {
