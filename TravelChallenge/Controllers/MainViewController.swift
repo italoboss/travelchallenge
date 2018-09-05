@@ -102,7 +102,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseProgressCardCell", for: indexPath) as! ExpenseProgressCardView
         
-        cell.type = ExpenseCategory(rawValue: indexPath.row+1)
+        cell.type = ExpenseCategory(rawValue: indexPath.row)
         
         return cell
     }

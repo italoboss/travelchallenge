@@ -96,11 +96,16 @@ extension AddExpensesViewController: UITableViewDataSource {
         
         //let expense = self.trip.expenses[indexPath.row]
         
-        cell.type = ExpenseCategory(rawValue: indexPath.row+1)
+        cell.type = ExpenseCategory(rawValue: indexPath.row)
         
         // Setting the flag responsible for the cell style
         cell.filled = false
-
+        if let myImage = cell.iconImageView.image {
+            let tintableImage = myImage.withRenderingMode(.alwaysTemplate)
+            cell.iconImageView.image = tintableImage
+        }
+        cell.iconImageView.tintColor = cell.type?.getColor()
+        
         
         //cell.categoryLabel.text = expense.category.name
         //cell.goalTextField.text = String(expense.costValue)

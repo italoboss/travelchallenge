@@ -29,7 +29,7 @@
                             <color key="progressTintColor" name="AppWhite"/>
                             <color key="trackTintColor" name="Gray"/>
                         </progressView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mze-kQ-o16">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mze-kQ-o16">
                             <rect key="frame" x="16" y="16" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="4di-kC-AHb"/>
