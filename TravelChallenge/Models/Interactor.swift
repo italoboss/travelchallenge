@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 class Interactor: UIPercentDrivenInteractiveTransition {
-    var hasStartd = false
+    var hasStarted = false
     var shouldFinish = false
 }

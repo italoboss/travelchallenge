@@ -121,7 +121,7 @@ class NewTripViewController: UIViewController {
 //        }
         if let navigation = segue.destination as? UINavigationController, let addExpensesVC = navigation.topViewController as? AddExpensesViewController{
             navigation.transitioningDelegate = self
-            //addExpensesVC.transitioningDelegate = self
+            addExpensesVC.transitioningDelegate = self
             addExpensesVC.interactor = self.interactor
         }
     }
@@ -131,6 +131,10 @@ extension NewTripViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return DismissAnimator()
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor :  nil
     }
     
 }
