@@ -16,7 +16,6 @@
 		2CABAF472135C012009F54D6 /* TravelChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF462135C012009F54D6 /* TravelChallengeUITests.swift */; };
 		2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF542135C19D009F54D6 /* CoreDataManager.swift */; };
 		2CABAF5A2135C2CB009F54D6 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */; };
-		2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF5C2135C349009F54D6 /* ColorPalette.swift */; };
 		2CABAF642136E480009F54D6 /* TravelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF632136E480009F54D6 /* TravelRepository.swift */; };
 		2CABAF66213720D2009F54D6 /* ExpenseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF65213720D2009F54D6 /* ExpenseRepository.swift */; };
 		2CABAF692137244E009F54D6 /* ExpenseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABAF682137244E009F54D6 /* ExpenseCategory.swift */; };
@@ -26,6 +25,12 @@
 		2CB4D7D321381ECB0056CA6B /* ExpenseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7D221381ECB0056CA6B /* ExpenseDao.swift */; };
 		2CB4D7D52138320E0056CA6B /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7D42138320E0056CA6B /* SwiftExtensions.swift */; };
 		2CB4D7DB213D7F750056CA6B /* AddOrEditTripDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7DA213D7F750056CA6B /* AddOrEditTripDelegate.swift */; };
+		2CB4D7DD213EA7EA0056CA6B /* ExpenseCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7DC213EA7EA0056CA6B /* ExpenseCategoryTests.swift */; };
+		2CB4D7E1213EBDFA0056CA6B /* TravelDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E0213EBDFA0056CA6B /* TravelDtoTests.swift */; };
+		2CB4D7E3213EC9C30056CA6B /* ExpenseDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E2213EC9C30056CA6B /* ExpenseDtoTests.swift */; };
+		2CB4D7E5213ECF460056CA6B /* SwiftExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */; };
+		2CB4D7E8213EFD090056CA6B /* TravelDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */; };
+		2CB4D7EB213F2FDC0056CA6B /* ExpenseDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */; };
 		42CAD451F9DD59B4577610C8 /* Pods_TravelChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65959FF8E0002E915E0CBE50 /* Pods_TravelChallengeUITests.framework */; };
 		4FFF3B8BF4F8EE2BACACF631 /* Pods_TravelChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFFFB9BA015B8C76432849F /* Pods_TravelChallenge.framework */; };
 		BE45B73821397F4200AD476D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE45B73721397F4200AD476D /* Colors.xcassets */; };
@@ -77,7 +82,6 @@
 		2CABAF482135C012009F54D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CABAF542135C19D009F54D6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2CABAF592135C2CB009F54D6 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		2CABAF5C2135C349009F54D6 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		2CABAF632136E480009F54D6 /* TravelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRepository.swift; sourceTree = "<group>"; };
 		2CABAF65213720D2009F54D6 /* ExpenseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRepository.swift; sourceTree = "<group>"; };
 		2CABAF682137244E009F54D6 /* ExpenseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategory.swift; sourceTree = "<group>"; };
@@ -87,6 +91,12 @@
 		2CB4D7D221381ECB0056CA6B /* ExpenseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDao.swift; sourceTree = "<group>"; };
 		2CB4D7D42138320E0056CA6B /* SwiftExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		2CB4D7DA213D7F750056CA6B /* AddOrEditTripDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditTripDelegate.swift; sourceTree = "<group>"; };
+		2CB4D7DC213EA7EA0056CA6B /* ExpenseCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryTests.swift; sourceTree = "<group>"; };
+		2CB4D7E0213EBDFA0056CA6B /* TravelDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDtoTests.swift; sourceTree = "<group>"; };
+		2CB4D7E2213EC9C30056CA6B /* ExpenseDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDtoTests.swift; sourceTree = "<group>"; };
+		2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensionsTests.swift; sourceTree = "<group>"; };
+		2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDaoTests.swift; sourceTree = "<group>"; };
+		2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDaoTests.swift; sourceTree = "<group>"; };
 		2D9638BBA6C4DA6DC2B48858 /* Pods-TravelChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelChallenge/Pods-TravelChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		4C2F30E8829C3B0BC7F047E5 /* Pods_TravelChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF499FF16227542E9087221 /* Pods-TravelChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelChallengeUITests/Pods-TravelChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +187,6 @@
 		2CABAF222135C011009F54D6 /* TravelChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				2CABAF5B2135C335009F54D6 /* Constants */,
 				2CABAF562135C1AC009F54D6 /* Models */,
 				2CABAF572135C1B3009F54D6 /* Views */,
 				2CABAF582135C1BE009F54D6 /* Controllers */,
@@ -198,8 +207,12 @@
 		2CABAF3A2135C012009F54D6 /* TravelChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				2CB4D7E6213EFBC30056CA6B /* Dao */,
+				2CB4D7DF213EBD2A0056CA6B /* Dto */,
+				2CB4D7DE213EBD200056CA6B /* Enums */,
 				2CABAF3B2135C012009F54D6 /* TravelChallengeTests.swift */,
 				2CABAF3D2135C012009F54D6 /* Info.plist */,
+				2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */,
 			);
 			path = TravelChallengeTests;
 			sourceTree = "<group>";
@@ -250,14 +263,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		2CABAF5B2135C335009F54D6 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				2CABAF5C2135C349009F54D6 /* ColorPalette.swift */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		2CABAF622136E464009F54D6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +305,32 @@
 				2CB4D7DA213D7F750056CA6B /* AddOrEditTripDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2CB4D7DE213EBD200056CA6B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4D7DC213EA7EA0056CA6B /* ExpenseCategoryTests.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2CB4D7DF213EBD2A0056CA6B /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4D7E0213EBDFA0056CA6B /* TravelDtoTests.swift */,
+				2CB4D7E2213EC9C30056CA6B /* ExpenseDtoTests.swift */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
+		2CB4D7E6213EFBC30056CA6B /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */,
+				2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */,
+			);
+			path = Dao;
 			sourceTree = "<group>";
 		};
 		B0A064B84989F5BDFC0276E3 /* Frameworks */ = {
@@ -542,7 +573,6 @@
 				BE8DFAD12136E85A006B5212 /* ExpenseCardView.swift in Sources */,
 				2CABAF242135C011009F54D6 /* AppDelegate.swift in Sources */,
 				2CABAF66213720D2009F54D6 /* ExpenseRepository.swift in Sources */,
-				2CABAF5D2135C349009F54D6 /* ColorPalette.swift in Sources */,
 				BE5D8479213EB31700DB2B80 /* DismissAnimator.swift in Sources */,
 				2CB4D7DB213D7F750056CA6B /* AddOrEditTripDelegate.swift in Sources */,
 				BE5D847B213EC3DB00DB2B80 /* Interactor.swift in Sources */,
@@ -556,6 +586,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB4D7E8213EFD090056CA6B /* TravelDaoTests.swift in Sources */,
+				2CB4D7E5213ECF460056CA6B /* SwiftExtensionsTests.swift in Sources */,
+				2CB4D7E1213EBDFA0056CA6B /* TravelDtoTests.swift in Sources */,
+				2CB4D7DD213EA7EA0056CA6B /* ExpenseCategoryTests.swift in Sources */,
+				2CB4D7E3213EC9C30056CA6B /* ExpenseDtoTests.swift in Sources */,
+				2CB4D7EB213F2FDC0056CA6B /* ExpenseDaoTests.swift in Sources */,
 				2CABAF3C2135C012009F54D6 /* TravelChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,7 +759,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF3U834HDS;
+				DEVELOPMENT_TEAM = P8ZMSZU6UR;
 				INFOPLIST_FILE = TravelChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -742,7 +778,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF3U834HDS;
+				DEVELOPMENT_TEAM = P8ZMSZU6UR;
 				INFOPLIST_FILE = TravelChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
