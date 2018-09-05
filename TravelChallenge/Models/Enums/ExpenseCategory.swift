@@ -9,7 +9,7 @@
 import UIKit
 
 enum ExpenseCategory: Int {
-    case transport = 1
+    case transport
     case hosting
     case feed
     case recreation
@@ -56,19 +56,32 @@ extension ExpenseCategory {
     }
     
     func getIcon() -> UIImage {
-        return UIImage()
+        
+        switch self {
+        case .transport:
+            return #imageLiteral(resourceName: "002-plane")
+        case .hosting:
+            return #imageLiteral(resourceName: "003-house")
+        case .recreation:
+            return #imageLiteral(resourceName: "005-mask")
+        case .feed:
+            return #imageLiteral(resourceName: "004-fruit")
+        case .extra:
+            return #imageLiteral(resourceName: "001-leaf")
+        }
+
     }
     
     func getColor() -> UIColor {
         switch self {
-        case .feed:
-            return UIColor(named: "Food")!
         case .transport:
-            return UIColor(named: "Transportation")!
+            return UIColor(named: "TransportationColor")!
         case .hosting:
             return UIColor(named: "Lodging")!
         case .recreation:
             return UIColor(named: "Recreation")!
+        case .feed:
+            return UIColor(named: "FoodColor")!
         case .extra:
             return UIColor(named: "Extras")!
 
