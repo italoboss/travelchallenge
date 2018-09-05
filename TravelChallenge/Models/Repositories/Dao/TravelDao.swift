@@ -10,8 +10,14 @@ import CoreData
 
 class TravelDao {
     
+    private var coreDataManager: CoreDataManager
+    
+    init(coreDataManager: CoreDataManager = CoreDataManager.manager) {
+        self.coreDataManager = coreDataManager
+    }
+    
     func fetchMyTravel() -> Travel? {
-        guard let travel: Travel = CoreDataManager.manager.fecth()?.first
+        guard let travel: Travel = coreDataManager.fecth()?.first
             else {
                 return nil
         }
@@ -21,7 +27,7 @@ class TravelDao {
     func fetch(by destination: String, and travelDate: Date) -> Travel? {
         let whereDestination = NSPredicate(format: "destination == %@", destination)
         let whereDate = NSPredicate(format: "travelDate == %@", travelDate as NSDate)
-        guard let travel: Travel = CoreDataManager.manager.fecth(where: NSCompoundPredicate(andPredicateWithSubpredicates: [whereDestination, whereDate]))?.first else {
+        guard let travel: Travel = coreDataManager.fecth(where: NSCompoundPredicate(andPredicateWithSubpredicates: [whereDestination, whereDate]))?.first else {
             return nil
         }
         return travel
@@ -33,17 +39,17 @@ class TravelDao {
             toSave = savedTravel
         }
         else {
-            toSave = Travel(context: CoreDataManager.manager.persistentContainer.viewContext)
+            toSave = Travel(context: coreDataManager.persistentContainer.viewContext)
         }
         toSave.destination = travel.destination
         toSave.travelDate = travel.travelDate
         toSave.savedValue = travel.savedValue
         toSave.createdAt = Date()
-        CoreDataManager.manager.saveContext()
+        coreDataManager.saveContext()
         
         if travel.expenses.count > 0 && !ExpenseDao().saveAll(travel.expenses, in: travel) {
-            CoreDataManager.manager.delete(objects: [toSave])
-            CoreDataManager.manager.saveContext()
+            coreDataManager.delete(objects: [toSave])
+            coreDataManager.saveContext()
             return false
         }
         return true
@@ -52,7 +58,7 @@ class TravelDao {
     func update(savedValue: Double, from trip: TravelDto) -> Bool {
         if let trip = self.fetch(by: trip.destination, and: trip.travelDate) {
             trip.savedValue += savedValue
-            CoreDataManager.manager.saveContext()
+            coreDataManager.saveContext()
             return true
         }
         return false

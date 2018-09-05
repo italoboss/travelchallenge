@@ -18,16 +18,6 @@ enum ExpenseCategory: Int {
 
 extension ExpenseCategory {
     
-    var name: String {
-        switch self {
-            case .transport: return "Transporte"
-            case .hosting: return "Hospedagem"
-            case .feed: return "Alimentação"
-            case .recreation: return "Lazer"
-            case .extra: return "Extra"
-        }
-    }
-    
     static var allCases: [ExpenseCategory] {
         let cases = [
             ExpenseCategory.transport,
