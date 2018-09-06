@@ -111,6 +111,11 @@ class NewTripViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func expensesViewTap(_ sender: Any) {
+        performSegue(withIdentifier: "NewTripToAddExpenses", sender: nil)
+    }
+    
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

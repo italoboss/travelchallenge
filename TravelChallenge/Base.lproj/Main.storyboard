@@ -290,19 +290,20 @@
                                 <rect key="frame" x="0.0" y="501" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Despesas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqf-Uz-sc5">
-                                        <rect key="frame" x="23" y="10" width="165" height="31"/>
+                                        <rect key="frame" x="23" y="10" width="181" height="31"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" translatesAutoresizingMaskIntoConstraints="NO" id="oDz-zA-M07">
-                                        <rect key="frame" x="328" y="7" width="36" height="36"/>
+                                        <rect key="frame" x="344" y="7" width="20" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="dea-Sm-ZzZ"/>
+                                            <constraint firstAttribute="width" constant="20" id="dea-Sm-ZzZ"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="Main"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6bT-87-h2H"/>
                                     <constraint firstItem="Yqf-Uz-sc5" firstAttribute="top" secondItem="nRv-PO-NSY" secondAttribute="top" constant="10" id="7ix-3f-MyY"/>
@@ -313,14 +314,10 @@
                                     <constraint firstAttribute="bottom" secondItem="Yqf-Uz-sc5" secondAttribute="bottom" constant="9" id="osz-sA-Hrh"/>
                                     <constraint firstAttribute="trailing" secondItem="oDz-zA-M07" secondAttribute="trailing" constant="11" id="syP-Ge-hQC"/>
                                 </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF6-Dp-Rs3">
-                                <rect key="frame" x="164" y="472" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="ScM-vM-ob1" kind="presentation" identifier="NewTripToAddExpenses" id="2IL-eq-0Ah"/>
+                                    <outletCollection property="gestureRecognizers" destination="dqy-SG-ADo" appends="YES" id="uvr-dz-9Ci"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -330,7 +327,6 @@
                             <constraint firstItem="p6H-aa-70q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4pF-67-dcl"/>
                             <constraint firstItem="Z5k-UM-npJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5ae-in-wVo"/>
                             <constraint firstItem="nRv-PO-NSY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5rV-fY-Lhf"/>
-                            <constraint firstItem="cF6-Dp-Rs3" firstAttribute="centerX" secondItem="nRv-PO-NSY" secondAttribute="centerX" id="6iG-hu-ISg"/>
                             <constraint firstItem="Z5k-UM-npJ" firstAttribute="top" secondItem="hDo-uM-KAz" secondAttribute="bottom" constant="20" id="G4B-in-lLN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LXz-9J-Omu" secondAttribute="trailing" constant="16" id="IRl-bN-U1x"/>
                             <constraint firstItem="nRv-PO-NSY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Lwo-1f-oc2"/>
@@ -341,7 +337,6 @@
                             <constraint firstItem="p6H-aa-70q" firstAttribute="top" secondItem="V5Y-tZ-NWk" secondAttribute="bottom" constant="22" id="aWW-hv-FNK"/>
                             <constraint firstItem="V5Y-tZ-NWk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aZp-Fc-CV8"/>
                             <constraint firstItem="hDo-uM-KAz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dUy-R6-YBL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cF6-Dp-Rs3" secondAttribute="bottom" constant="49" id="fMU-ZN-d1t"/>
                             <constraint firstItem="LXz-9J-Omu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ivO-tS-dcy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z5k-UM-npJ" secondAttribute="trailing" constant="16" id="l15-D3-WC5"/>
                             <constraint firstItem="yhY-qb-FyH" firstAttribute="top" secondItem="Z5k-UM-npJ" secondAttribute="bottom" constant="8" id="sEh-ry-Yhk"/>
@@ -374,6 +369,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dqy-SG-ADo">
+                    <connections>
+                        <action selector="expensesViewTap:" destination="BYZ-38-t0r" id="j0v-3s-Q4L"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2857" y="402"/>
         </scene>
