@@ -10,7 +10,8 @@ import UIKit
 
 class AddExpensesViewController: UIViewController {
     @IBOutlet weak var expensesListTableView: UITableView!
-    var trip: TravelDto!
+    var trip: TravelDto?
+    var delegate: EditExpensesDelegate?
     
     var interactor: Interactor? = nil
     
@@ -19,24 +20,43 @@ class AddExpensesViewController: UIViewController {
        
         let nib = UINib(nibName: "ExpenseCard", bundle: nil)
         expensesListTableView.register(nib, forCellReuseIdentifier: "expenseCardCell")
-        
         expensesListTableView.dataSource = self
+        
+        loadExpenses()
     }
+    
+    func loadExpenses() {
+        if let delegate = self.delegate {
+            self.trip = delegate.getTripToUpdate()
+        }
+    }
+    
+//    func updateViewValues() {
+//        if let trip = self.trip {
+//
+//        }
+//    }
     
     @IBAction func didTapSaveButton(_ sender: Any) {
-        print("Did tap save btn")
-        self.dismiss(animated: true, completion: nil)
+        completeEdition()
     }
     
-    func  saveExpenses(){
-        for row in 0...self.trip.expenses.count{
-            let cell = self.expensesListTableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: IndexPath.init(row: row, section: 0)) as! ExpenseCardView
-            
-            self.trip.expenses[row].costValue = Double(cell.goalTextField.text!) ?? 0.0
+    func completeEdition() {
+        saveExpenses()
+        self.dismiss(animated: true) {
+            if let delegate = self.delegate, let trip = self.trip {
+                delegate.didFinished(trip: trip)
+            }
         }
-        
-        if ExpenseRepository().saveAll(self.trip.expenses, in: self.trip){
-            performSegue(withIdentifier: "AddExpensesToMain", sender: nil)
+    }
+    
+    func saveExpenses() {
+        if let trip = self.trip {
+            for row in 0...(trip.expenses.count-1) {
+                if let cell = self.expensesListTableView.cellForRow(at: IndexPath(row: row, section: 0)) as? ExpenseCardView {
+                    trip.expenses[row].costValue = Double(cell.goalTextField.text!) ?? 0.0
+                }
+            }
         }
     }
     
@@ -55,7 +75,7 @@ class AddExpensesViewController: UIViewController {
         switch sender.state {
         case .began:
             interactor.hasStarted = true
-            dismiss(animated: true, completion: nil)
+            completeEdition()
         case .changed:
             interactor.shouldFinish = progress > percentThreshold
             interactor.update(progress)
@@ -79,19 +99,28 @@ class AddExpensesViewController: UIViewController {
     }
     
 }
+
 extension AddExpensesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 5
-        //return self.trip.expenses.count
+        if let trip = self.trip {
+            return trip.expenses.count
+        }
+        else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCardCell", for: indexPath) as! ExpenseCardView
         
-        //let expense = self.trip.expenses[indexPath.row]
-        
-        cell.type = ExpenseCategory(rawValue: indexPath.row)
+        if let trip = self.trip {
+            let expense = trip.expenses[indexPath.row]
+            cell.type = expense.category
+            cell.goalTextField.text = String(expense.costValue)
+        }
+        else {
+            cell.type = ExpenseCategory(rawValue: indexPath.row)
+        }
         
         // Setting the flag responsible for the cell style
         cell.filled = false
@@ -100,10 +129,6 @@ extension AddExpensesViewController: UITableViewDataSource {
             cell.iconImageView.image = tintableImage
         }
         cell.iconImageView.tintColor = cell.type?.getColor()
-        
-        
-        //cell.categoryLabel.text = expense.category.name
-        //cell.goalTextField.text = String(expense.costValue)
         
         return cell
     }

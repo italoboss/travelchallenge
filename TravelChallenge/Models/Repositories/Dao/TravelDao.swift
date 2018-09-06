@@ -44,7 +44,9 @@ class TravelDao {
         toSave.destination = travel.destination
         toSave.travelDate = travel.travelDate
         toSave.savedValue = travel.savedValue
-        toSave.createdAt = Date()
+        if toSave.createdAt == nil {
+            toSave.createdAt = Date()
+        }
         coreDataManager.saveContext()
         
         if travel.expenses.count > 0 && !ExpenseDao().saveAll(travel.expenses, in: travel) {

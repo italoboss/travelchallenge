@@ -71,11 +71,15 @@ class NewTripViewController: UIViewController {
         guard let tripSavedValueText = savedValueTextField.text else { return false }
         guard let tripSavedValue = Double(tripSavedValueText) else { return false }
         
-        trip = TravelDto.init(with: tripDestination, travelDate: tripDate, savedValue: tripSavedValue)
-        if let trip = self.trip, trip.expenses.count == 0 {
-            trip.initExpenses()
+        let updatedTrip = TravelDto.init(with: tripDestination, travelDate: tripDate, savedValue: tripSavedValue)
+        if let trip = self.trip {
+            updatedTrip.expenses = trip.expenses
         }
-        return TravelRepository().save(travel: trip!)
+        if updatedTrip.expenses.count == 0 {
+            updatedTrip.initExpenses()
+        }
+        self.trip = updatedTrip
+        return TravelRepository().save(travel: updatedTrip)
     }
     
 
@@ -110,14 +114,22 @@ class NewTripViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let addExpensesVC = segue.destination as? AddExpensesViewController, let trip = sender as? TravelDto {
-//            addExpensesVC.trip = trip
-//        }
-        if let navigation = segue.destination as? UINavigationController, let addExpensesVC = navigation.topViewController as? AddExpensesViewController{
+        if let navigation = segue.destination as? UINavigationController, let addExpensesVC = navigation.topViewController as? AddExpensesViewController {
             navigation.transitioningDelegate = self
             addExpensesVC.transitioningDelegate = self
             addExpensesVC.interactor = self.interactor
+            addExpensesVC.delegate = self
         }
+    }
+}
+
+extension NewTripViewController: EditExpensesDelegate {
+    func getTripToUpdate() -> TravelDto? {
+        return self.trip
+    }
+    
+    func didFinished(trip: TravelDto) {
+        self.trip?.expenses = trip.expenses
     }
 }
 

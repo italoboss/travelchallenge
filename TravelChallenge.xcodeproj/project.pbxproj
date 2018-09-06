@@ -31,6 +31,7 @@
 		2CB4D7E5213ECF460056CA6B /* SwiftExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */; };
 		2CB4D7E8213EFD090056CA6B /* TravelDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */; };
 		2CB4D7EB213F2FDC0056CA6B /* ExpenseDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */; };
+		2CB4D7EE214070510056CA6B /* EditExpensesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4D7ED214070510056CA6B /* EditExpensesDelegate.swift */; };
 		42CAD451F9DD59B4577610C8 /* Pods_TravelChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65959FF8E0002E915E0CBE50 /* Pods_TravelChallengeUITests.framework */; };
 		4FFF3B8BF4F8EE2BACACF631 /* Pods_TravelChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFFFB9BA015B8C76432849F /* Pods_TravelChallenge.framework */; };
 		BE45B73821397F4200AD476D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE45B73721397F4200AD476D /* Colors.xcassets */; };
@@ -97,6 +98,7 @@
 		2CB4D7E4213ECF460056CA6B /* SwiftExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensionsTests.swift; sourceTree = "<group>"; };
 		2CB4D7E7213EFD090056CA6B /* TravelDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDaoTests.swift; sourceTree = "<group>"; };
 		2CB4D7EA213F2FDC0056CA6B /* ExpenseDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDaoTests.swift; sourceTree = "<group>"; };
+		2CB4D7ED214070510056CA6B /* EditExpensesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpensesDelegate.swift; sourceTree = "<group>"; };
 		2D9638BBA6C4DA6DC2B48858 /* Pods-TravelChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelChallenge/Pods-TravelChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		4C2F30E8829C3B0BC7F047E5 /* Pods_TravelChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF499FF16227542E9087221 /* Pods-TravelChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelChallengeUITests/Pods-TravelChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB4D7DA213D7F750056CA6B /* AddOrEditTripDelegate.swift */,
+				2CB4D7ED214070510056CA6B /* EditExpensesDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				BE8DFACB2136E461006B5212 /* NewTripViewController.swift in Sources */,
 				2CB4D7D121380EF60056CA6B /* TravelDao.swift in Sources */,
 				BE8DFACD2136E4CE006B5212 /* AddExpensesViewController.swift in Sources */,
+				2CB4D7EE214070510056CA6B /* EditExpensesDelegate.swift in Sources */,
 				2CB4D7D321381ECB0056CA6B /* ExpenseDao.swift in Sources */,
 				2CABAF552135C19D009F54D6 /* CoreDataManager.swift in Sources */,
 				BE5D8475213D80EF00DB2B80 /* NotificationController.swift in Sources */,

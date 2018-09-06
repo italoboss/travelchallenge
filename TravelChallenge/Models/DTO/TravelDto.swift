@@ -50,7 +50,8 @@ class TravelDto {
         self.createdAt = createdAt
         
         if let expenses = entity.expenses as? Set<Expense> {
-            for expense in expenses {
+            
+            for expense in expenses.sorted(by: { $0.category < $1.category }) {
                 if let add = try? ExpenseDto(from: expense) {
                     self.expenses.append(add)
                 }
