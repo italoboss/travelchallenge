@@ -31,12 +31,6 @@ class AddExpensesViewController: UIViewController {
         }
     }
     
-//    func updateViewValues() {
-//        if let trip = self.trip {
-//
-//        }
-//    }
-    
     @IBAction func didTapSaveButton(_ sender: Any) {
         completeEdition()
     }

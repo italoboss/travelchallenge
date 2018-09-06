@@ -36,7 +36,13 @@ class NewTripViewController: UIViewController {
     
     func loadTrip() {
         if let delegate = self.delegate {
-            self.trip = delegate.getTripToUpdate()
+            if let trip = delegate.getTripToUpdate() {
+                self.trip = trip
+            }
+            else {
+                self.trip = TravelDto(with: "", travelDate: Date(), savedValue: 0.0)
+                self.trip?.initExpenses()
+            }
         }
     }
     

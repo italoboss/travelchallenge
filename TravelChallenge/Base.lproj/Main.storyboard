@@ -366,6 +366,7 @@
                         <outlet property="destinationTextField" destination="hDo-uM-KAz" id="M5Z-dq-WFt"/>
                         <outlet property="savedValueTextField" destination="hhR-Fp-R4v" id="qJ8-a5-eDL"/>
                         <outlet property="travelDateTextField" destination="yhY-qb-FyH" id="whB-tR-hbX"/>
+                        <segue destination="ScM-vM-ob1" kind="presentation" identifier="NewTripToAddExpenses" id="yef-Jz-bVq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
